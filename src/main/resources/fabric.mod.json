@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "twitchemotes",
+  "version": "${version}",
+  "name": "TwitchEmotes",
+  "description": "A mod to show Twitch, 7tv, BTTV and FFZ emotes in chat",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/twitchemotes/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.dancedown.twitchemotes.TwitchEmotes"
+    ],
+    "modmenu": [
+      "me.dancedown.twitchemotes.integration.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "twitchemotes.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

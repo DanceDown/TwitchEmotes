@@ -1,0 +1,1530 @@
+{
+    "data": [{
+            "id": "emotesv2_3db6b02aabee45c69aefe85337569035",
+            "name": "NowField",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_3ffb1454600e4a33bd99a8b6894e6737",
+            "name": "WoWMidnight",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_de2cc5fc92c645a29d0a4f40a9e7cde5",
+            "name": "Yagoo",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_8e13364cf4054fd2a36b550d38ef578b",
+            "name": "DeafeSports",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_b1c5f2a287454bbf9e8889090d6400a8",
+            "name": "Chimera7",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_ba5ae4be5c724ca59d649fa713ff0730",
+            "name": "SipTime",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_cb0cec2c9975497fa093be1c3276dd92",
+            "name": "EleGiggle",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_fc2f39b6a62c4d7e832993eab17547d2",
+            "name": "FeverFighter",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_a7ab2c184e334d4a9784e6e5d51947f7",
+            "name": "WeDidThat",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_587405136a8147148c77df74baaa1bf4",
+            "name": "PewPewPew",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_4e1c5651219a462894aefa8b6720efc5",
+            "name": "JinxLUL",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_4b51b45f35df4dd8ad45a611c9a9ec35",
+            "name": "FeelsVi",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_a829c76ca15f49a2bf71e1270f83fe83",
+            "name": "AmbessaLove",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_db169cf5364e4634b529eef8b0616d94",
+            "name": "EkkoChest",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_50b3304bc0884c6792f13615db072a5c",
+            "name": "CaitThinking",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_d351c5d5e9084402b30bc39eaa3d92ae",
+            "name": "Cinheimer",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_f2fd474fbe964964b2570671575b39ea",
+            "name": "BratChat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_db3cd788399347a8b2ebfb8a85f5badb",
+            "name": "BigSad",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_973cf33af6e14a92b7c5b970a9d55afd",
+            "name": "GRASSLORD",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_5fa0f9da251941988f31b6d7632c021c",
+            "name": "TWITH",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_bfb533e2253044f3a77d0032b2354c0b",
+            "name": "SUBtember",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_9eade28238d64e83b0219a9025d4692d",
+            "name": "AnotherRecord",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_e41e4d6808224f25ae1fb625aa26de63",
+            "name": "GoatEmotey",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_c1f4899e65cf4f53b2fd98e15733973a",
+            "name": "GoldPLZ",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_13b6dd7f3a3146ef8dc10f66d8b42a96",
+            "name": "TwitchConHYPE",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_5d523adb8bbb4786821cd7091e47da21",
+            "name": "PopNemo",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_dcd06b30a5c24f6eb871e8f5edbd44f7",
+            "name": "DinoDance",
+            "format": ["static", "animated"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_53f6a6af8b0e453d874bbefee49b3e73",
+            "name": "NewRecord",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_fcbeed664f7c47d6ba3b57691275ef51",
+            "name": "SUBprise",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_b0c6ccb3b12b4f99a9cc83af365a09f1",
+            "name": "ImTyping",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_819621bcb8f44566a1bd8ea63d06c58f",
+            "name": "Shush",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_c0c9c932c82244ff920ad2134be90afb",
+            "name": "MyAvatar",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_f202746ed88f4e7c872b50b1f7fd78cc",
+            "name": "PizzaTime",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_ecb0bfd49b3c4325864b948d46c8152b",
+            "name": "LaundryBasket",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_a2dfbbbbf66f4a75b0f53db841523e6c",
+            "name": "ModLove",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "emotesv2_031bf329c21040a897d55ef471da3dd3",
+            "name": "Jebasted",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827377",
+            "name": "TransgenderPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827370",
+            "name": "PansexualPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827356",
+            "name": "NonbinaryPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827340",
+            "name": "LesbianPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827332",
+            "name": "IntersexPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827326",
+            "name": "GenderFluidPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827321",
+            "name": "GayPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827313",
+            "name": "BisexualPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "307827267",
+            "name": "AsexualPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "305954156",
+            "name": "PogChamp",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "304489309",
+            "name": "GlitchNRG",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "304489128",
+            "name": "GlitchLit",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "304486324",
+            "name": "StinkyGlitch",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "304486301",
+            "name": "GlitchCat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "302628617",
+            "name": "FootGoal",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "302628613",
+            "name": "FootYellow",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "302628600",
+            "name": "FootBall",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "302537250",
+            "name": "BlackLivesMatter",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "302426269",
+            "name": "ExtraLife",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "301696583",
+            "name": "VirtualHug",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555600",
+            "name": "R-)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555599",
+            "name": "R)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555598",
+            "name": ";-p",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555597",
+            "name": ";p",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555596",
+            "name": ";-P",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555595",
+            "name": ";P",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555594",
+            "name": ":-p",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555593",
+            "name": ":p",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555592",
+            "name": ":-P",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555591",
+            "name": ":P",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555590",
+            "name": ";-)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555589",
+            "name": ";)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555588",
+            "name": ":-\\",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555587",
+            "name": ":\\",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555586",
+            "name": ":-/",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555585",
+            "name": ":/",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555584",
+            "name": "<3",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555583",
+            "name": ":-o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555582",
+            "name": ":o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555581",
+            "name": ":-O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555580",
+            "name": ":O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555579",
+            "name": "8-)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555578",
+            "name": "B-)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555577",
+            "name": "B)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555576",
+            "name": "o.o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555575",
+            "name": "o_o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555574",
+            "name": "o.O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555573",
+            "name": "o_O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555572",
+            "name": "O.O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555571",
+            "name": "O_O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555570",
+            "name": "O.o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555569",
+            "name": "O_o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555568",
+            "name": ":-Z",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555567",
+            "name": ":Z",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555566",
+            "name": ":-z",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555565",
+            "name": ":z",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555564",
+            "name": ":-|",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555563",
+            "name": ":|",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555562",
+            "name": ">(",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555561",
+            "name": ":-D",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555560",
+            "name": ":D",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555559",
+            "name": ":-(",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555558",
+            "name": ":(",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "555555557",
+            "name": ":-)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "301428702",
+            "name": "BOP",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "300116350",
+            "name": "SingsNote",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "300116349",
+            "name": "SingsMic",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "300116344",
+            "name": "TwitchSings",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "2113050",
+            "name": "SoonerLater",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1713825",
+            "name": "HolidayTree",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1713822",
+            "name": "HolidaySanta",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1713819",
+            "name": "HolidayPresent",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1713816",
+            "name": "HolidayLog",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1713813",
+            "name": "HolidayCookie",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1547903",
+            "name": "PixelBob",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441289",
+            "name": "FBPenalty",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441285",
+            "name": "FBChallenge",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441281",
+            "name": "FBCatch",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441276",
+            "name": "FBBlock",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441273",
+            "name": "FBSpiral",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441271",
+            "name": "FBPass",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1441261",
+            "name": "FBRun",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1290325",
+            "name": "MaxLOL",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1220086",
+            "name": "TwitchRPG",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1003190",
+            "name": "PinkMercy",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1003189",
+            "name": "MercyWing2",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1003187",
+            "name": "MercyWing1",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "965738",
+            "name": "PartyHat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "959018",
+            "name": "EarthDay",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "864205",
+            "name": "TombRaid",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "724216",
+            "name": "PopCorn",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "626795",
+            "name": "FBtouchdown",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "508650",
+            "name": "TPFufun",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "479745",
+            "name": "TwitchVotes",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "461298",
+            "name": "DarkMode",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "446979",
+            "name": "HSWP",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "444572",
+            "name": "HSCheers",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "425688",
+            "name": "PowerUpL",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "425671",
+            "name": "PowerUpR",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "425618",
+            "name": "LUL",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "376765",
+            "name": "EntropyWins",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "323914",
+            "name": "TPcrunchyroll",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "196892",
+            "name": "TwitchUnity",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "191767",
+            "name": "Squid4",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "191764",
+            "name": "Squid3",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "191763",
+            "name": "Squid2",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "191762",
+            "name": "Squid1",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "191313",
+            "name": "CrreamAwk",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "166266",
+            "name": "CarlSmile",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "166263",
+            "name": "TwitchLit",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160404",
+            "name": "TehePelo",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160403",
+            "name": "TearGlove",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160402",
+            "name": "SabaPing",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160401",
+            "name": "PunOko",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160400",
+            "name": "KonCha",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160397",
+            "name": "Kappu",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160396",
+            "name": "InuyoFace",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160395",
+            "name": "BigPhish",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160394",
+            "name": "BegWan",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "160392",
+            "name": "ThankEgg",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "156787",
+            "name": "MorphinTime",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "145315",
+            "name": "TheIlluminati",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "143490",
+            "name": "TBAngel",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "142140",
+            "name": "MVGame",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "138325",
+            "name": "NinjaGrumpy",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "135393",
+            "name": "PartyTime",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "134256",
+            "name": "RlyTho",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "134255",
+            "name": "UWot",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "134254",
+            "name": "YouDontSay",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "133537",
+            "name": "KAPOW",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "133468",
+            "name": "ItsBoshyTime",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "123171",
+            "name": "CoolStoryBob",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "120232",
+            "name": "TriHard",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "118772",
+            "name": "SuperVinlin",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "117701",
+            "name": "FreakinStinkin",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "117484",
+            "name": "Poooound",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "116625",
+            "name": "CurseLit",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "115234",
+            "name": "BatChest",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "115233",
+            "name": "BrainSlug",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "115075",
+            "name": "PrimeMe",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114876",
+            "name": "StrawBeary",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114870",
+            "name": "RaccAttack",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114856",
+            "name": "UncleNox",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114847",
+            "name": "WTRuck",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114846",
+            "name": "TooSpicy",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114836",
+            "name": "Jebaited",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114835",
+            "name": "DogFace",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "114738",
+            "name": "BlargNaut",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "112292",
+            "name": "TakeNRG",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "112291",
+            "name": "GivePLZ",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "112290",
+            "name": "imGlitch",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "112289",
+            "name": "pastaThat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "112288",
+            "name": "copyThis",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "111792",
+            "name": "UnSane",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "111700",
+            "name": "DatSheffy",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "111351",
+            "name": "TheTarFu",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "111300",
+            "name": "PicoMause",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "111119",
+            "name": "TinyFace",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "110734",
+            "name": "DxCat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "107030",
+            "name": "RuleFive",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "106294",
+            "name": "VoteNay",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "106293",
+            "name": "VoteYea",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "102556",
+            "name": "PJSugar",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "102242",
+            "name": "DoritosChip",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "100590",
+            "name": "OpieOP",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "98562",
+            "name": "FutureMan",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "90129",
+            "name": "ChefFrank",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "90076",
+            "name": "StinkyCheese",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "90075",
+            "name": "NomNom",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "89945",
+            "name": "SmoocherZ",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "84608",
+            "name": "cmonBruh",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81997",
+            "name": "KappaWealth",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81636",
+            "name": "MikeHogu",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81274",
+            "name": "VoHiYo",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81273",
+            "name": "KomodoHype",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81249",
+            "name": "SeriousSloth",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81248",
+            "name": "OSFrog",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "81103",
+            "name": "OhMyDog",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "74510",
+            "name": "KappaClaus",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "70433",
+            "name": "KappaRoss",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "68856",
+            "name": "MingLee",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "64138",
+            "name": "SeemsGood",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "62836",
+            "name": "twitchRaid",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "62835",
+            "name": "bleedPurple",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "62834",
+            "name": "duDudu",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "62833",
+            "name": "riPepperonis",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "58765",
+            "name": "NotLikeThis",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "58135",
+            "name": "DendiFace",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "58127",
+            "name": "CoolCat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "55338",
+            "name": "KappaPride",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "52492",
+            "name": "ShadyLulu",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "51838",
+            "name": "ArgieB8",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "49106",
+            "name": "CorgiDerp",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "38586",
+            "name": "PraiseIt",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "38436",
+            "name": "TTours",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "35063",
+            "name": "mcaT",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "34875",
+            "name": "NotATK",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "30259",
+            "name": "HeyGuys",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "30134",
+            "name": "Mau5",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "28328",
+            "name": "PRChase",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "28087",
+            "name": "WutFace",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "27602",
+            "name": "BuddhaBar",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "27509",
+            "name": "PermaSmug",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "22998",
+            "name": "panicBasket",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "22639",
+            "name": "BabyRage",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "20225",
+            "name": "HassaanChop",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "7427",
+            "name": "TheThing",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "4338",
+            "name": "RitzMitz",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "4337",
+            "name": "YouWHY",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "4240",
+            "name": "PipeHype",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "4057",
+            "name": "BrokeBack",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "3792",
+            "name": "ANELE",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "3668",
+            "name": "PanicVis",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "3632",
+            "name": "GrammarKing",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "3412",
+            "name": "PeoplesChamp",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1906",
+            "name": "SoBayed",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1904",
+            "name": "BigBrother",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1902",
+            "name": "Keepo",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1901",
+            "name": "Kippa",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1900",
+            "name": "RalpherZ",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1899",
+            "name": "TF2John",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1898",
+            "name": "ThunBeast",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1896",
+            "name": "WholeWheat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "973",
+            "name": "DAESuppy",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "360",
+            "name": "FailFish",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "357",
+            "name": "HotPokket",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "354",
+            "name": "4Head",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "245",
+            "name": "ResidentSleeper",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "244",
+            "name": "FUNgineer",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "92",
+            "name": "PMSTwin",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "87",
+            "name": "ShazBotstix",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "74",
+            "name": "AsianGlow",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "73",
+            "name": "DBstyle",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "69",
+            "name": "BloodTrail",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "66",
+            "name": "OneHand",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "65",
+            "name": "FrankerZ",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "52",
+            "name": "SMOrc",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "50",
+            "name": "ArsonNoSexy",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "47",
+            "name": "PunchTrees",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "46",
+            "name": "SSSsss",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "41",
+            "name": "Kreygasm",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "40",
+            "name": "KevinTurtle",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "36",
+            "name": "PJSalt",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "34",
+            "name": "SwiftRage",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "33",
+            "name": "DansGame",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "32",
+            "name": "GingerPower",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "30",
+            "name": "BCWarrior",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "28",
+            "name": "MrDestructoid",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "26",
+            "name": "JonCarnage",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "25",
+            "name": "Kappa",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "22",
+            "name": "RedCoat",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "18",
+            "name": "TheRinger",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "17",
+            "name": "StoneLightning",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "16",
+            "name": "OptimizePrime",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "15",
+            "name": "JKanStyle",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "14",
+            "name": "R)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "13",
+            "name": ";P",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "12",
+            "name": ":P",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "11",
+            "name": ";)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "10",
+            "name": ":/",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "9",
+            "name": "<3",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "8",
+            "name": ":O",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "7",
+            "name": "B)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "6",
+            "name": "O_o",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "5",
+            "name": ":|",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "4",
+            "name": ">(",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "3",
+            "name": ":D",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "2",
+            "name": ":(",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }, {
+            "id": "1",
+            "name": ":)",
+            "format": ["static"],
+            "scale": ["1.0", "2.0", "3.0"]
+        }
+    ],
+    "template": "https://static-cdn.jtvnw.net/emoticons/v2/{{id}}/{{format}}/{{theme_mode}}/{{scale}}"
+}

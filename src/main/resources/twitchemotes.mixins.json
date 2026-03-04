@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.dancedown.twitchemotes.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ChatScreenMixin",
+    "ClientSuggestionProviderMixin",
+    "ComponentRenderUtilsMixin",
+    "FontMixin",
+    "TitleScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
