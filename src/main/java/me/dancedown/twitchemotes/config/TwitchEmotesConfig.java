@@ -16,9 +16,9 @@ public class TwitchEmotesConfig {
 
     public String twitchDisplayName;
     public String twitchUserName;
-    public String twitchChannelName = "bastighg";
+    public String twitchChannelName;
     public String twitchUserId;
-    public String twitchChannelId = "38121996";
+    public String twitchChannelId;
     public String twitchClientId;
     public String twitchOAuthToken;
     public boolean enabled = true;
