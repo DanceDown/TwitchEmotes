@@ -44,8 +44,8 @@ All external libraries are used solely for emote retrieval and decoding.
 
 ## Installation
 
-1. Install Fabric Loader for Minecraft 1.21.11 (version `0.18.4`)
-2. Install Fabric API (version `0.141.3`)
+1. Install Fabric Loader for your desired Minecraft version (e.g. for 1.21.11 it is `0.18.4`)
+2. Install the Fabric API for your desired Minecraft version (e.g. for 1.21.11 it is `0.141.3`)
 3. Place the mod `.jar` file into your `mods` folder
 4. Launch the game
 
