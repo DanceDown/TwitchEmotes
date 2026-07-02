@@ -77,12 +77,12 @@ public class EmoteImageFactory {
     public static OverlayEmoteImage createOverlayEmoteImage(EmoteImage baseImage, EmoteImage overlayImage, Identifier imageId, String textureName) {
         int scale = Math.max(baseImage.scale(), overlayImage.scale());
         int width = Math.max(
-                baseImage.width() / baseImage.scale() * scale,
-                overlayImage.width() / overlayImage.scale() * scale
+                (int) (baseImage.width() * ((float) scale / baseImage.scale())),
+                (int) (overlayImage.width() * ((float) scale / overlayImage.scale()))
         );
         int height = Math.max(
-                baseImage.height() / baseImage.scale() * scale,
-                overlayImage.height() / overlayImage.scale() * scale
+                (int) (baseImage.height() * ((float) scale / baseImage.scale())),
+                (int) (overlayImage.height() * ((float) scale / overlayImage.scale()))
         );
         Supplier<OverlayEmoteImage> supplier = () ->
                 new OverlayEmoteImage(baseImage, overlayImage, imageId,
