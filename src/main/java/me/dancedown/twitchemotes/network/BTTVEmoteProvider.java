@@ -83,11 +83,8 @@ public class BTTVEmoteProvider extends EmoteProvider {
             id = jsonObject.get("id").getAsString();
             name = jsonObject.get("code").getAsString();
             imageFormat = jsonObject.get("imageType").getAsString();
-            format = switch (imageFormat) {
-                case "gif" -> EmoteFormat.GIF;
-                case "png" -> EmoteFormat.PNG;
-                default -> EmoteFormat.WEBP;
-            };
+            // BetterTTV API returns GIF as image type although the image is a webp
+            format = imageFormat.equals("png") ? EmoteFormat.PNG : EmoteFormat.WEBP;
         } catch (NullPointerException | IllegalStateException | UnsupportedOperationException ex) {
             return null;
         }
