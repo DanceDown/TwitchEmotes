@@ -42,9 +42,9 @@ public class TwitchPasteLoginScreen extends Screen {
                 Identifier.fromNamespaceAndPath("twitchemotes", "key"),
                 false,
                 false,
-                b -> handleLogin()
+                _ -> handleLogin()
         ));
-        layout.addToFooter(Button.builder(CommonComponents.GUI_CANCEL, b -> minecraft.gui.setScreen(screen)).build());
+        layout.addToFooter(Button.builder(CommonComponents.GUI_CANCEL, _ -> minecraft.gui.setScreen(screen)).build());
         layout.visitWidgets(this::addRenderableWidget);
         layout.arrangeElements();
     }
