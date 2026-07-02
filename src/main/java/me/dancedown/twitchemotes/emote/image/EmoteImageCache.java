@@ -13,13 +13,17 @@ import java.util.function.Consumer;
 
 public class EmoteImageCache {
 
-    private final Executor DOWNLOAD_PARSE_EXECUTOR = Executors.newFixedThreadPool(4);
+    private final Executor DOWNLOAD_PARSE_EXECUTOR;
     private final HashMap<String, CompletableFuture<EmoteImage>> EMOTE_IMAGE_CACHE = new HashMap<>();
     private final HashMap<String, BakedEmoteGlyph> EMOTE_GLYPH_CACHE = new HashMap<>();
     private final HashMap<String, Set<String>> REVERSE_DEPENDENCIES = new HashMap<>();
     private final HashMap<String, Set<String>> DEPENDENCIES = new HashMap<>();
 
     private final Object SYNC_LOCK = new Object();
+
+    public EmoteImageCache(Executor downloadParseExecutor) {
+        this.DOWNLOAD_PARSE_EXECUTOR = downloadParseExecutor;
+    }
 
     /**
      * @param key The key of the EmoteImage
