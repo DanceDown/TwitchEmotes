@@ -10,6 +10,7 @@ import me.dancedown.twitchemotes.emote.type.EmoteScope;
 import me.dancedown.twitchemotes.gui.ToastNotification;
 import me.dancedown.twitchemotes.network.*;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
@@ -41,11 +42,12 @@ public class TwitchEmotes implements ClientModInitializer {
 
     private static final ExecutorService LOAD_EXECUTOR = Executors.newSingleThreadExecutor();
     private static final ExecutorService REGISTRY_EXECUTOR = Executors.newSingleThreadExecutor();
+    private static final ExecutorService DOWNLOAD_PARSE_EXECUTOR = Executors.newFixedThreadPool(4);
     private static final Map<ProviderType, EmoteProvider> PROVIDERS = new EnumMap<>(ProviderType.class);
     private static final Map<ProviderType, LoadState> LOAD_STATES = new EnumMap<>(ProviderType.class);
 
     public static final EmoteRegistry EMOTE_REGISTRY = new EmoteRegistry();
-    public static final EmoteImageCache EMOTE_IMAGE_CACHE = new EmoteImageCache();
+    public static final EmoteImageCache EMOTE_IMAGE_CACHE = new EmoteImageCache(DOWNLOAD_PARSE_EXECUTOR);
 
     public static final AtomicBoolean chatRefreshNeeded = new AtomicBoolean(false);
     private static int refreshCounter = 0;
@@ -61,12 +63,12 @@ public class TwitchEmotes implements ClientModInitializer {
         for (ProviderType type : ProviderType.values())
             LOAD_STATES.put(type, new LoadState(false, null));
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        ClientTickEvents.END_CLIENT_TICK.register(this::onTick);
+        ClientLifecycleEvents.CLIENT_STOPPING.register(_ -> {
             LOAD_EXECUTOR.shutdownNow();
             REGISTRY_EXECUTOR.shutdownNow();
-        }));
-
-        ClientTickEvents.END_CLIENT_TICK.register(this::onTick);
+            DOWNLOAD_PARSE_EXECUTOR.shutdownNow();
+        });
 
         refresh(false);
     }
