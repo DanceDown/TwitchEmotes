@@ -12,7 +12,7 @@ import java.util.Collection;
 @Mixin(ClientSuggestionProvider.class)
 public class ClientSuggestionProviderMixin {
 
-    @Inject(method = "getCustomTabSugggestions", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getCustomTabSuggestions()Ljava/util/Collection;", at = @At("RETURN"), cancellable = true)
     private void addEmoteSuggestions(CallbackInfoReturnable<Collection<String>> cir) {
         Collection<String> suggestions = cir.getReturnValue();
         suggestions.addAll(TwitchEmotes.EMOTE_REGISTRY.getKeys());

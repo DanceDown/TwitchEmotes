@@ -20,6 +20,12 @@ base {
     archivesName = project.archives_base_name
 }
 
+loom {
+    runConfigs.configureEach {
+        systemProperties.put("joml.nounsafe", "true")
+    }
+}
+
 repositories {
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
@@ -59,14 +65,15 @@ processResources {
 def targetJavaVersion = 25
 def javaVersion = JavaVersion.toVersion(targetJavaVersion)
 def nativeAccessJvmArg = "--enable-native-access=ALL-UNNAMED"
+def jomlNoUnsafeJvmArg = "-Djoml.nounsafe=true"
 
 allprojects {
     tasks.withType(Test).configureEach {
-        jvmArgs nativeAccessJvmArg
+        jvmArgs nativeAccessJvmArg, jomlNoUnsafeJvmArg
     }
 
     tasks.withType(JavaExec).configureEach {
-        jvmArgs nativeAccessJvmArg
+        jvmArgs nativeAccessJvmArg, jomlNoUnsafeJvmArg
     }
 }
 
