@@ -85,7 +85,7 @@ public class TwitchEmotes implements ClientModInitializer {
         if(refreshCounter++ >= ticksPerChatRefresh) {
             refreshCounter = 0;
             if(chatRefreshNeeded.compareAndSet(true, false))
-                minecraft.gui.getChat().rescaleChat();
+                minecraft.gui.hud.getChat().rescaleChat();
         }
     }
 

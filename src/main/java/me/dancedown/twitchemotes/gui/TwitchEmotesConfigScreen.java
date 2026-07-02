@@ -146,12 +146,12 @@ public class TwitchEmotesConfigScreen extends Screen {
                 Identifier.fromNamespaceAndPath("twitchemotes", "key"),
                 loggedIn, true, value -> {
             if(value) {
-                minecraft.setScreen(new ConfirmScreen(
+                minecraft.gui.setScreen(new ConfirmScreen(
                         confirmed -> {
                             if(confirmed) {
                                 Util.getPlatform().openUri("https://chatterino.com/client_login");
-                                minecraft.setScreen(new TwitchPasteLoginScreen(this));
-                            } else minecraft.setScreen(this);
+                                minecraft.gui.setScreen(new TwitchPasteLoginScreen(this));
+                            } else minecraft.gui.setScreen(this);
                         }, Component.translatable("chat.link.confirmTrusted"),
                         Component.literal("https://chatterino.com/client_login").withColor(0x8800FF)
                 ));
@@ -173,10 +173,10 @@ public class TwitchEmotesConfigScreen extends Screen {
         LinearLayout footerButtonLayout = mainLayout.addToFooter(LinearLayout.horizontal().spacing(4));
         footerButtonLayout.defaultCellSetting().alignHorizontallyCenter();
         footerButtonLayout.addChild(Button.builder(CommonComponents.GUI_CANCEL,
-                _ -> minecraft.setScreen(lastScreen)).build());
+                _ -> minecraft.gui.setScreen(lastScreen)).build());
         footerButtonLayout.addChild(Button.builder(Component.translatable("button.twitchemotes.save"),
                 _ -> {
-                    if(handleSave()) minecraft.setScreen(lastScreen);
+                    if(handleSave()) minecraft.gui.setScreen(lastScreen);
                 }).build());
         mainLayout.visitWidgets(this::addRenderableWidget);
         mainLayout.arrangeElements();

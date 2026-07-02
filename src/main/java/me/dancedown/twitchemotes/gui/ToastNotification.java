@@ -23,7 +23,7 @@ public final class ToastNotification {
 
     public static void toast(@NotNull MutableComponent title, @Nullable MutableComponent desc) {
         Minecraft mc = Minecraft.getInstance();
-        mc.execute(() -> mc.getToastManager().addToast(
+        mc.execute(() -> mc.gui.toastManager().addToast(
                 new SystemToast(SystemToast.SystemToastId.PERIODIC_NOTIFICATION, title, desc))
         );
     }

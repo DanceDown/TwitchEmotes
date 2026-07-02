@@ -44,7 +44,7 @@ public class TwitchPasteLoginScreen extends Screen {
                 false,
                 b -> handleLogin()
         ));
-        layout.addToFooter(Button.builder(CommonComponents.GUI_CANCEL, b -> minecraft.setScreen(screen)).build());
+        layout.addToFooter(Button.builder(CommonComponents.GUI_CANCEL, b -> minecraft.gui.setScreen(screen)).build());
         layout.visitWidgets(this::addRenderableWidget);
         layout.arrangeElements();
     }
@@ -92,7 +92,7 @@ public class TwitchPasteLoginScreen extends Screen {
             // Forcing the official Twitch API instead of the Scalar API
             TwitchEmotes.execute(() -> TwitchEmotes.reloadProvider(ProviderType.TWITCH, true));
         } else ToastNotification.toast("toast.twitchemotes.invalidlogin", null, Color.RED);
-        minecraft.setScreen(screen);
+        minecraft.gui.setScreen(screen);
     }
 
 }

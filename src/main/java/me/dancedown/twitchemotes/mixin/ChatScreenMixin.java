@@ -27,8 +27,8 @@ public abstract class ChatScreenMixin extends Screen {
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
         Identifier icon = Identifier.fromNamespaceAndPath("twitchemotes", "twitch");
         SpriteIconButton widget = new SpriteIconButton.CenteredIcon(
-                20, 20, Component.empty(), 12, 14, new WidgetSprites(icon), b ->
-                this.minecraft.setScreen(new TwitchEmotesConfigScreen(this)), null, null
+                20, 20, Component.empty(), 12, 14, 4, 3, new WidgetSprites(icon), b ->
+                this.minecraft.gui.setScreen(new TwitchEmotesConfigScreen(this)), null, null, false
         ) {
             @Override
             public @Nullable ComponentPath nextFocusPath(@NotNull FocusNavigationEvent focusNavigationEvent) {
