@@ -6,7 +6,6 @@ import me.dancedown.twitchemotes.exception.TwitchNotLoggedInException;
 import me.dancedown.twitchemotes.exception.UnknownTwitchEmotesException;
 import me.dancedown.twitchemotes.network.NetworkHandler;
 import net.minecraft.client.OptionInstance;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.layouts.GridLayout;
@@ -19,7 +18,6 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
-import org.jspecify.annotations.NonNull;
 
 import java.awt.*;
 
@@ -182,11 +180,6 @@ public class TwitchEmotesConfigScreen extends Screen {
                 }).build());
         mainLayout.visitWidgets(this::addRenderableWidget);
         mainLayout.arrangeElements();
-    }
-
-    @Override
-    public void render(@NonNull GuiGraphics guiGraphics, int i, int j, float f) {
-        super.render(guiGraphics, i, j, f);
     }
 
     /**

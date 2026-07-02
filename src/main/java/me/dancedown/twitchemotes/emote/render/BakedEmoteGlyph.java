@@ -13,7 +13,7 @@ import net.minecraft.client.gui.font.TextRenderable;
 import net.minecraft.client.gui.font.glyphs.BakedGlyph;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.network.chat.Style;
-import org.joml.Matrix4f;
+import org.joml.Matrix4fc;
 import org.jspecify.annotations.NonNull;
 
 public class BakedEmoteGlyph implements BakedGlyph {
@@ -112,7 +112,7 @@ public class BakedEmoteGlyph implements BakedGlyph {
         private static final float offsetY = 1;
 
         @Override
-        public void render(@NonNull Matrix4f matrix4f, @NonNull VertexConsumer vertexConsumer, int light, boolean bold) {
+        public void render(@NonNull Matrix4fc matrix4f, @NonNull VertexConsumer vertexConsumer, int light, boolean bold) {
 
             float left = x;
             float right = left + glyph.emoteWidth;

@@ -2,7 +2,7 @@ package me.dancedown.twitchemotes.gui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.client.renderer.RenderPipelines;
@@ -51,7 +51,7 @@ public class IconToggleButton extends Button {
     }
 
     @Override
-    protected void renderContents(GuiGraphics guiGraphics, int i, int j, float f) {
+    protected void extractContents(GuiGraphicsExtractor guiGraphics, int i, int j, float f) {
 
         // background
         int x = this.getX();
@@ -94,7 +94,7 @@ public class IconToggleButton extends Button {
         int baseY = y + height - 4 - lines.size() * font.lineHeight;
 
         for(int index = 0; index < lines.size(); index++)
-            guiGraphics.drawCenteredString(font, lines.get(index), x + width / 2, baseY + index * (font.lineHeight + 1), 0xFFFFFFFF);
+            guiGraphics.centeredText(font, lines.get(index), x + width / 2, baseY + index * (font.lineHeight + 1), 0xFFFFFFFF);
 
         // checkbox
         if(renderCheckbox) {
@@ -108,10 +108,10 @@ public class IconToggleButton extends Button {
                     0xFF202020
             );
 
-            guiGraphics.hLine(bx, bx + boxSize, by, Color.DARK_GRAY.getRGB());
-            guiGraphics.hLine(bx, bx + boxSize, by + boxSize, Color.DARK_GRAY.getRGB());
-            guiGraphics.vLine(bx, by, by + boxSize, Color.DARK_GRAY.getRGB());
-            guiGraphics.vLine(bx + boxSize, by, by + boxSize, Color.DARK_GRAY.getRGB());
+            guiGraphics.horizontalLine(bx, bx + boxSize, by, Color.DARK_GRAY.getRGB());
+            guiGraphics.horizontalLine(bx, bx + boxSize, by + boxSize, Color.DARK_GRAY.getRGB());
+            guiGraphics.verticalLine(bx, by, by + boxSize, Color.DARK_GRAY.getRGB());
+            guiGraphics.verticalLine(bx + boxSize, by, by + boxSize, Color.DARK_GRAY.getRGB());
 
             guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED,
                     Identifier.withDefaultNamespace("pending_invite/" + (value ? "accept" : "reject")),
@@ -123,10 +123,10 @@ public class IconToggleButton extends Button {
                 ? 0xFFFFFFFF
                 : 0xFF888888;
 
-        guiGraphics.hLine(x, x + w - 1, y, frameColor);
-        guiGraphics.hLine(x, x + w - 1, y + h - 1, frameColor);
-        guiGraphics.vLine(x, y, y + h - 1, frameColor);
-        guiGraphics.vLine(x + w - 1, y, y + h - 1, frameColor);
+        guiGraphics.horizontalLine(x, x + w - 1, y, frameColor);
+        guiGraphics.horizontalLine(x, x + w - 1, y + h - 1, frameColor);
+        guiGraphics.verticalLine(x, y, y + h - 1, frameColor);
+        guiGraphics.verticalLine(x + w - 1, y, y + h - 1, frameColor);
     }
 
     @Override

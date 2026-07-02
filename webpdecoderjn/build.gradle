@@ -14,3 +14,11 @@ dependencies {
     api "net.java.dev.jna:jna:5.13.0"
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
