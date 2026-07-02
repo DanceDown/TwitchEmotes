@@ -64,7 +64,7 @@ public class TwitchEmotes implements ClientModInitializer {
             LOAD_STATES.put(type, new LoadState(false, null));
 
         ClientTickEvents.END_CLIENT_TICK.register(this::onTick);
-        ClientLifecycleEvents.CLIENT_STOPPING.register(_ -> {
+        ClientLifecycleEvents.CLIENT_STOPPING.register(mc -> {
             LOAD_EXECUTOR.shutdownNow();
             REGISTRY_EXECUTOR.shutdownNow();
             DOWNLOAD_PARSE_EXECUTOR.shutdownNow();
