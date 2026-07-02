@@ -55,7 +55,7 @@ public class EmoteImageCache {
 
             EMOTE_IMAGE_CACHE.put(key, future);
             DEPENDENCIES.put(key, new HashSet<>(dependencies));
-            dependencies.forEach(dep -> REVERSE_DEPENDENCIES.computeIfAbsent(dep, k -> new HashSet<>()).add(key));
+            dependencies.forEach(dep -> REVERSE_DEPENDENCIES.computeIfAbsent(dep, _ -> new HashSet<>()).add(key));
         }
     }
 
@@ -129,7 +129,7 @@ public class EmoteImageCache {
      * @param future The future to cancel
      */
     private void cancel(CompletableFuture<EmoteImage> future) {
-        future.whenCompleteAsync((emoteImage, throwable) -> {
+        future.whenCompleteAsync((emoteImage, _) -> {
             if(emoteImage != null) {
                 TwitchEmotes.chatRefreshNeeded.set(true);
                 emoteImage.close();
