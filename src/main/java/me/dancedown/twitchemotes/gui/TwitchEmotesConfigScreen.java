@@ -73,7 +73,7 @@ public class TwitchEmotesConfigScreen extends Screen {
         contentLayout.addChild(new StringWidget(Component.translatable("editboxlabel.twitchemotes.channelbox"), minecraft.font));
         contentLayout.addChild(new SpacerElement(width,4));
         EditBox channelEditBox = contentLayout.addChild(new EditBox(minecraft.font, width / 3, 20, Component.empty()));
-        channelEditBox.setValue(channelName);
+        channelEditBox.setValue(channelName == null ? "" : channelName);
         channelEditBox.setResponder(value -> channelName = value);
         OptionInstance<Integer> emoteQualityOption = new OptionInstance<>(
                 "slider.twitchemotes.quality",
