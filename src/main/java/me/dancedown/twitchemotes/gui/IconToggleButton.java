@@ -38,7 +38,7 @@ public class IconToggleButton extends Button {
             boolean renderCheckbox,
             Consumer<Boolean> onToggle
     ) {
-        super(x, y, width, height, label, b -> {}, Button.DEFAULT_NARRATION);
+        super(x, y, width, height, label, _ -> {}, Button.DEFAULT_NARRATION);
         this.icon = icon;
         this.value = initial;
         this.renderCheckbox = renderCheckbox;

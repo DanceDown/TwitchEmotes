@@ -55,7 +55,7 @@ public class TwitchEmotesConfigScreen extends Screen {
     protected void init() {
         clearWidgets();
 
-        SpriteIconButton enabledButton = SpriteIconButton.builder(Component.empty(), x -> {
+        SpriteIconButton enabledButton = SpriteIconButton.builder(Component.empty(), _ -> {
             enabled = !enabled;
             this.init();
                 }, true)
@@ -78,7 +78,7 @@ public class TwitchEmotesConfigScreen extends Screen {
         OptionInstance<Integer> emoteQualityOption = new OptionInstance<>(
                 "slider.twitchemotes.quality",
                 OptionInstance.noTooltip(),
-                (text, value) -> Component.literal(value + "x"),
+                (_, value) -> Component.literal(value + "x"),
                 new OptionInstance.IntRange(1,4),
                 qualityPreference,
                 value -> qualityPreference = value
@@ -173,9 +173,9 @@ public class TwitchEmotesConfigScreen extends Screen {
         LinearLayout footerButtonLayout = mainLayout.addToFooter(LinearLayout.horizontal().spacing(4));
         footerButtonLayout.defaultCellSetting().alignHorizontallyCenter();
         footerButtonLayout.addChild(Button.builder(CommonComponents.GUI_CANCEL,
-                button -> minecraft.setScreen(lastScreen)).build());
+                _ -> minecraft.setScreen(lastScreen)).build());
         footerButtonLayout.addChild(Button.builder(Component.translatable("button.twitchemotes.save"),
-                button -> {
+                _ -> {
                     if(handleSave()) minecraft.setScreen(lastScreen);
                 }).build());
         mainLayout.visitWidgets(this::addRenderableWidget);
