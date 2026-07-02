@@ -1,7 +1,7 @@
 # Twitch Emotes
 
 A mod for rendering Twitch, BetterTTV, FrankerFaceZ and 7tv emotes in the Minecraft chat.\
-This mod is client-sided and runs on Minecraft 1.21.11 and Fabric only.
+This mod is client-sided and runs on Fabric only.
 
 ---
 
