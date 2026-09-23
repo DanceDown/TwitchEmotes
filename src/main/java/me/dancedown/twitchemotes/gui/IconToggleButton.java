@@ -42,7 +42,7 @@ public class IconToggleButton extends Button {
     }
 
     @Override
-    protected void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
+    public void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
 
         // background
         int x = this.getX();

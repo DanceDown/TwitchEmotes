@@ -252,7 +252,7 @@ public class TwitchEmotesConfigScreen extends Screen {
         }
 
         @Override
-        protected void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
+        public void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
             int bgColor = isHoveredOrFocused() ? 0x4F888888 : 0x4F000000;
             guiGraphics.fill(getX(), getY(), getX() + getWidth(), getY() + getHeight(), bgColor);
             IconToggleButton.renderToggleMark(guiGraphics, getX() + 4, getY() + 4, 12, enabled);
