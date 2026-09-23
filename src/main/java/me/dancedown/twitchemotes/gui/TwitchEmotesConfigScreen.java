@@ -17,9 +17,9 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-import net.minecraft.util.Util;
 
 import java.awt.*;
+import java.net.URI;
 
 public class TwitchEmotesConfigScreen extends Screen {
 
@@ -149,7 +149,9 @@ public class TwitchEmotesConfigScreen extends Screen {
                 minecraft.gui.setScreen(new ConfirmScreen(
                         confirmed -> {
                             if(confirmed) {
-                                Util.getPlatform().openUri("https://chatterino.com/client_login");
+                                try {
+                                    Desktop.getDesktop().browse(URI.create("https://chatterino.com/client_login"));
+                                } catch (Exception ignored) {}
                                 minecraft.gui.setScreen(new TwitchPasteLoginScreen(this));
                             } else minecraft.gui.setScreen(this);
                         }, Component.translatable("chat.link.confirmTrusted"),

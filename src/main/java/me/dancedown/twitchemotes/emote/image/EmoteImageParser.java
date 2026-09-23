@@ -171,7 +171,7 @@ public class EmoteImageParser {
     private NativeImage convertToNativeImage(BufferedImage frame) throws IOException {
         ByteArrayOutputStream oS = new ByteArrayOutputStream();
         ImageIO.write(frame, "png", oS);
-        return NativeImage.read(NativeImage.Format.RGBA, new ByteArrayInputStream(oS.toByteArray()));
+        return NativeImage.read(new ByteArrayInputStream(oS.toByteArray()));
     }
 
     /**

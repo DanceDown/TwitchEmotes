@@ -1,9 +1,9 @@
 package me.dancedown.twitchemotes.emote.render;
 
 import com.mojang.blaze3d.font.GlyphInfo;
-import com.mojang.blaze3d.pipeline.RenderPipeline;
-import com.mojang.blaze3d.textures.GpuTextureView;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.renderpearl.api.pipeline.RenderPipeline;
+import com.mojang.renderpearl.api.textures.GpuTextureView;
 import me.dancedown.twitchemotes.TwitchEmotes;
 import me.dancedown.twitchemotes.emote.image.EmoteImage;
 import me.dancedown.twitchemotes.exception.EmoteStyleNotRecognizedException;
