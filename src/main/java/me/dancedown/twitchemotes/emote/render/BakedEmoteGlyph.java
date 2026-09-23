@@ -33,7 +33,6 @@ public class BakedEmoteGlyph extends BakedGlyph {
     private BakedEmoteGlyph(@NonNull EmoteImage image) {
         super(
                 image.glyphRenderTypes(),
-                image.gpuTextureView(),
                 0, 1, 0, 1,
                 0,
                 getEmoteWidth(image),
@@ -85,10 +84,9 @@ public class BakedEmoteGlyph extends BakedGlyph {
      * @param matrix4f The current transformation matrix
      * @param vertexConsumer The vertex consumer to draw to
      * @param light The packed light value
-     * @param seeThrough If see-through rendering is used (ignored)
      */
     @Override
-    public void renderChar(GlyphInstance glyphInstance, Matrix4f matrix4f, VertexConsumer vertexConsumer, int light, boolean seeThrough) {
+    public void renderChar(GlyphInstance glyphInstance, Matrix4f matrix4f, VertexConsumer vertexConsumer, int light) {
         float left = glyphInstance.x();
         float right = left + emoteWidth;
         float bottom = glyphInstance.y() + maxHeight - offsetY;

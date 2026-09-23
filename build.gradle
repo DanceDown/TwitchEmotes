@@ -35,7 +35,7 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modApi "com.terraformersmc:modmenu:15.0.0"
+    modApi "com.terraformersmc:modmenu:14.0.2"
     compileOnly "org.jspecify:jspecify:1.0.0"
     testImplementation "org.junit.jupiter:junit-jupiter:6.0.2"
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

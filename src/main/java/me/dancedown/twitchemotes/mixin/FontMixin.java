@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(targets = "net.minecraft.client.gui.Font$PreparedTextBuilder")
+@Mixin(targets = "net.minecraft.client.gui.Font$StringRenderOutput")
 public class FontMixin {
 
     /**

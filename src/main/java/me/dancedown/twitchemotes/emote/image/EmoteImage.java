@@ -1,7 +1,6 @@
 package me.dancedown.twitchemotes.emote.image;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import com.mojang.blaze3d.textures.GpuTextureView;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.font.GlyphRenderTypes;
 import net.minecraft.client.renderer.texture.DynamicTexture;
@@ -12,7 +11,6 @@ public abstract class EmoteImage implements AutoCloseable {
     private final ResourceLocation imageId;
     protected final DynamicTexture texture;
     private final GlyphRenderTypes glyphRenderTypes;
-    private final GpuTextureView gpuTextureView;
     private final int width;
     private final int height;
     private final int scale;
@@ -21,7 +19,6 @@ public abstract class EmoteImage implements AutoCloseable {
         this.imageId = imageId;
         this.texture = texture;
         this.glyphRenderTypes = types;
-        this.gpuTextureView = texture.getTextureView();
         this.width = width;
         this.height = height;
         this.scale = scale;
@@ -43,13 +40,6 @@ public abstract class EmoteImage implements AutoCloseable {
      * @return A signature of the current frame e.g. the index of an image in a sequence
      */
     public abstract int frameSignature();
-
-    /**
-     * @return The GPU texture view of the uploaded texture
-     */
-    public GpuTextureView gpuTextureView() {
-        return gpuTextureView;
-    }
 
     /**
      * @return The glyph render types
