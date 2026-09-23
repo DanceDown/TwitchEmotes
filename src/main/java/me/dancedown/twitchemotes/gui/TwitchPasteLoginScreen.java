@@ -5,6 +5,7 @@ import me.dancedown.twitchemotes.config.TwitchEmotesConfig;
 import me.dancedown.twitchemotes.network.NetworkHandler;
 import me.dancedown.twitchemotes.network.ProviderType;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.StringWidget;
 import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
@@ -36,7 +37,7 @@ public class TwitchPasteLoginScreen extends Screen {
         clearWidgets();
         HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this);
         assert minecraft != null;
-        layout.addTitleHeader(Component.translatable("title.twitchemotes.pastelogin"), minecraft.font);
+        layout.addToHeader(new StringWidget(Component.translatable("title.twitchemotes.pastelogin"), minecraft.font));
         layout.addToContents(new IconToggleButton(
                 0, 0, width / 3, height / 2,
                 Component.translatable("button.twitchemotes.pastelogin"),

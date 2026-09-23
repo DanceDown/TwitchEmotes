@@ -30,7 +30,7 @@ public abstract class ChatScreenMixin extends Screen {
         {
             assert this.minecraft != null;
             this.minecraft.setScreen(new TwitchEmotesConfigScreen(this));
-        }, null
+        }
         ) {
             @Override
             public @Nullable ComponentPath nextFocusPath(@NotNull FocusNavigationEvent focusNavigationEvent) {

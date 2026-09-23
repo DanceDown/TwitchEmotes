@@ -127,7 +127,7 @@ public class EmoteImageParser {
         if(frames.isEmpty())
             throw new IOException("Couldn't load GIF frames for emote " + name);
         else if (frameCount == 1) {
-            image = EmoteImageFactory.createStaticEmoteImage(frames.getFirst(), id, name, width, height, scale);
+            image = EmoteImageFactory.createStaticEmoteImage(frames.get(0), id, name, width, height, scale);
             if (image == null)
                 throw new IOException("Couldn't load static GIF image for emote " + name);
         } else {
@@ -207,7 +207,7 @@ public class EmoteImageParser {
 
         if(image.frameCount == 1) {
             EmoteImage emoteImage = EmoteImageFactory.createStaticEmoteImage(
-                    convertToNativeImage(image.frames.getFirst().img),
+                    convertToNativeImage(image.frames.get(0).img),
                     id, name, image.canvasWidth, image.canvasHeight, scale
             );
             if(emoteImage == null)

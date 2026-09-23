@@ -21,10 +21,10 @@ public final class EmoteEntry {
         };
 
         int providerPriority = switch (provider) {
-            case ProviderType.STV -> 3;
-            case ProviderType.BTTV -> 2;
-            case ProviderType.FFZ -> 1;
-            case ProviderType.TWITCH -> 0;
+            case STV -> 3;
+            case BTTV -> 2;
+            case FFZ -> 1;
+            case TWITCH -> 0;
         };
 
         priority = scopePriority + providerPriority;
