@@ -5,11 +5,11 @@ import com.mojang.blaze3d.textures.GpuTextureView;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.font.GlyphRenderTypes;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 public abstract class EmoteImage implements AutoCloseable {
 
-    private final Identifier imageId;
+    private final ResourceLocation imageId;
     protected final DynamicTexture texture;
     private final GlyphRenderTypes glyphRenderTypes;
     private final GpuTextureView gpuTextureView;
@@ -17,7 +17,7 @@ public abstract class EmoteImage implements AutoCloseable {
     private final int height;
     private final int scale;
 
-    protected EmoteImage(Identifier imageId, DynamicTexture texture, GlyphRenderTypes types, int width, int height, int scale) {
+    protected EmoteImage(ResourceLocation imageId, DynamicTexture texture, GlyphRenderTypes types, int width, int height, int scale) {
         this.imageId = imageId;
         this.texture = texture;
         this.glyphRenderTypes = types;
@@ -75,7 +75,7 @@ public abstract class EmoteImage implements AutoCloseable {
     /**
      * @return The identifier of the registered image
      */
-    public Identifier imageId() {
+    public ResourceLocation imageId() {
         return imageId;
     }
 

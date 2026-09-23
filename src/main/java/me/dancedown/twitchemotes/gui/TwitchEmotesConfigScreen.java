@@ -17,8 +17,8 @@ import net.minecraft.client.gui.screens.ConfirmScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
+import net.minecraft.resources.ResourceLocation;
 import org.jspecify.annotations.NonNull;
 
 import java.awt.*;
@@ -61,7 +61,7 @@ public class TwitchEmotesConfigScreen extends Screen {
             enabled = !enabled;
             this.init();
                 }, true)
-                .sprite(Identifier.withDefaultNamespace("pending_invite/" + (enabled ? "accept" : "reject")), 16, 16)
+                .sprite(ResourceLocation.withDefaultNamespace("pending_invite/" + (enabled ? "accept" : "reject")), 16, 16)
                 .size(20, 20).build();
         enabledButton.setPosition(width - enabledButton.getWidth() - 4, 4);
         addRenderableWidget(enabledButton);
@@ -99,43 +99,43 @@ public class TwitchEmotesConfigScreen extends Screen {
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.loadtwitchemotes"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "twitch"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch"),
                 loadTwitchEmotes, true, value -> loadTwitchEmotes = value));
         // 7tv
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.loadstv"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "7tv"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "7tv"),
                 loadSTVEmotes, true, value -> loadSTVEmotes = value));
         // bttv
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.loadbttv"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "betterttv"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "betterttv"),
                 loadBTTVEmotes, true, value -> loadBTTVEmotes = value));
         // ffz
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.loadffz"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "frankerfacez"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "frankerfacez"),
                 loadFFZEmotes, true, value -> loadFFZEmotes = value));
         // unlisted
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.unlisted"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "unlisted"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "unlisted"),
                 loadUnlistedEmotes, true, value -> loadUnlistedEmotes = value));
         // overlay
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.overlay"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "overlay"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "overlay"),
                 overlayEmotes, true, value -> overlayEmotes = value));
         // animate
         rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.animate"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "animated"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "animated"),
                 animateEmotes, true, value -> animateEmotes = value));
         // twitch login
         final boolean loggedIn = TwitchEmotes.CONFIG.twitchClientId != null
@@ -145,7 +145,7 @@ public class TwitchEmotesConfigScreen extends Screen {
         IconToggleButton btn = rh.addChild(new IconToggleButton(0, 0,
                 width / 5, height / 5,
                 Component.translatable("button.twitchemotes.login"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "key"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "key"),
                 loggedIn, true, value -> {
             if(value) {
                 minecraft.setScreen(new ConfirmScreen(

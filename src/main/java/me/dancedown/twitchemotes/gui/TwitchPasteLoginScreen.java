@@ -9,7 +9,7 @@ import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.awt.*;
 import java.lang.reflect.Field;
@@ -39,7 +39,7 @@ public class TwitchPasteLoginScreen extends Screen {
         layout.addToContents(new IconToggleButton(
                 0, 0, width / 3, height / 2,
                 Component.translatable("button.twitchemotes.pastelogin"),
-                Identifier.fromNamespaceAndPath("twitchemotes", "key"),
+                ResourceLocation.fromNamespaceAndPath("twitchemotes", "key"),
                 false,
                 false,
                 b -> handleLogin()

@@ -8,6 +8,7 @@
     "ClientSuggestionProviderMixin",
     "ComponentRenderUtilsMixin",
     "FontMixin",
+    "FontWidthMixin",
     "TitleScreenMixin"
   ],
   "injectors": {

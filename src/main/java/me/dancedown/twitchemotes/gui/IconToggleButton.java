@@ -11,7 +11,7 @@ import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.data.AtlasIds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import org.jspecify.annotations.NonNull;
 
@@ -24,7 +24,7 @@ public class IconToggleButton extends Button {
 
     private boolean value;
     private final boolean renderCheckbox;
-    private final Identifier icon;
+    private final ResourceLocation icon;
     private final Consumer<Boolean> onToggle;
     private final int spriteWidth;
     private final int spriteHeight;
@@ -33,7 +33,7 @@ public class IconToggleButton extends Button {
             int x, int y,
             int width, int height,
             Component label,
-            Identifier icon,
+            ResourceLocation icon,
             boolean initial,
             boolean renderCheckbox,
             Consumer<Boolean> onToggle
@@ -51,7 +51,7 @@ public class IconToggleButton extends Button {
     }
 
     @Override
-    protected void renderContents(GuiGraphics guiGraphics, int i, int j, float f) {
+    protected void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
 
         // background
         int x = this.getX();
@@ -83,7 +83,7 @@ public class IconToggleButton extends Button {
         // text
         Font font = Minecraft.getInstance().font;
         int maxTextWidth = Math.max(1, width - 6);
-        List<FormattedCharSequence> lines = new ArrayList<>(font.split(this.message, maxTextWidth));
+        List<FormattedCharSequence> lines = new ArrayList<>(font.split(this.getMessage(), maxTextWidth));
         if(lines.size() > 2) {
             lines = lines.subList(0, 2);
             String shortened = font.plainSubstrByWidth(
@@ -114,7 +114,7 @@ public class IconToggleButton extends Button {
             guiGraphics.vLine(bx + boxSize, by, by + boxSize, Color.DARK_GRAY.getRGB());
 
             guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED,
-                    Identifier.withDefaultNamespace("pending_invite/" + (value ? "accept" : "reject")),
+                    ResourceLocation.withDefaultNamespace("pending_invite/" + (value ? "accept" : "reject")),
                     bx + 1, by + 1, boxSize - 1, boxSize - 1);
         }
 

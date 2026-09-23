@@ -5,7 +5,7 @@ import me.dancedown.twitchemotes.TwitchEmotes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.font.GlyphRenderTypes;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -24,7 +24,7 @@ public class EmoteImageFactory {
      * @param scale The canvas scale
      * @return A new static emote image or <code>null</code> if it could not be created
      */
-    public static StaticEmoteImage createStaticEmoteImage(NativeImage image, Identifier imageId, String textureName, int width, int height, int scale) {
+    public static StaticEmoteImage createStaticEmoteImage(NativeImage image, ResourceLocation imageId, String textureName, int width, int height, int scale) {
         Supplier<StaticEmoteImage> emoteImageSupplier = () -> new StaticEmoteImage(image, imageId,
                 new DynamicTexture(() -> textureName, image),
                 GlyphRenderTypes.createForColorTexture(imageId),
@@ -51,7 +51,7 @@ public class EmoteImageFactory {
      * @param scale The scale of the canvas
      * @return A new animated emote image or <code>null</code> if it could not be created
      */
-    public static AnimatedEmoteImage createAnimatedEmoteImage(List<NativeImage> images, List<Integer> durations, Identifier imageId, String textureName, int width, int height, int scale) {
+    public static AnimatedEmoteImage createAnimatedEmoteImage(List<NativeImage> images, List<Integer> durations, ResourceLocation imageId, String textureName, int width, int height, int scale) {
         Supplier<AnimatedEmoteImage> emoteImageSupplier = () -> new AnimatedEmoteImage(images, durations, imageId,
                         new DynamicTexture(textureName, width, height, true),
                         GlyphRenderTypes.createForColorTexture(imageId),
@@ -74,7 +74,7 @@ public class EmoteImageFactory {
      * @param textureName The name of the texture (for debugging)
      * @return A new overlay image or <code>null</code> if it could not be created
      */
-    public static OverlayEmoteImage createOverlayEmoteImage(EmoteImage baseImage, EmoteImage overlayImage, Identifier imageId, String textureName) {
+    public static OverlayEmoteImage createOverlayEmoteImage(EmoteImage baseImage, EmoteImage overlayImage, ResourceLocation imageId, String textureName) {
         int scale = Math.max(baseImage.scale(), overlayImage.scale());
         int width = Math.max(
                 (int) (baseImage.width() * ((float) scale / baseImage.scale())),

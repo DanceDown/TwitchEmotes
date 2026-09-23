@@ -5,7 +5,7 @@ import net.minecraft.client.gui.components.SpriteIconButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,7 +22,7 @@ public abstract class TitleScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
-        Identifier icon = Identifier.fromNamespaceAndPath("twitchemotes", "twitch");
+        ResourceLocation icon = ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch");
         SpriteIconButton widget = SpriteIconButton.builder(Component.empty(),
                 b -> this.minecraft.setScreen(new TwitchEmotesConfigScreen(this)),
                 true).size(20, 20).sprite(icon, 12, 14).build();

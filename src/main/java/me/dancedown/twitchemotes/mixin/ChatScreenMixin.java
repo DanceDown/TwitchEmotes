@@ -8,7 +8,7 @@ import net.minecraft.client.gui.navigation.FocusNavigationEvent;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,7 +25,7 @@ public abstract class ChatScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
-        Identifier icon = Identifier.fromNamespaceAndPath("twitchemotes", "twitch");
+        ResourceLocation icon = ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch");
         SpriteIconButton widget = new SpriteIconButton.CenteredIcon(
                 20, 20, Component.empty(), 12, 14, new WidgetSprites(icon), b ->
                 this.minecraft.setScreen(new TwitchEmotesConfigScreen(this)), null, null

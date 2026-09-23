@@ -3,7 +3,7 @@ package me.dancedown.twitchemotes.emote.image;
 import com.mojang.blaze3d.platform.NativeImage;
 import me.dancedown.twitchemotes.emote.type.EmoteFormat;
 import me.dancedown.twitchemotes.exception.EmoteParseException;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -27,12 +27,12 @@ public class EmoteImageParser {
     public static final String PREFIX = "emotes/";
 
     private final String name;
-    private final Identifier id;
+    private final ResourceLocation id;
     private final int scale;
 
     public EmoteImageParser(String id, String name, int scale) {
         this.name = name;
-        this.id = Identifier.fromNamespaceAndPath("twitchemotes",
+        this.id = ResourceLocation.fromNamespaceAndPath("twitchemotes",
                 PREFIX + name.toLowerCase().replaceAll("[^a-z0-9._-]", "_") + "-" + id.toLowerCase());
         this.scale = scale;
     }
@@ -64,7 +64,7 @@ public class EmoteImageParser {
         String path = EmoteImageParser.PREFIX
                 + baseImage.imageId().getPath().substring(EmoteImageParser.PREFIX.length())
                 + overlayImage.imageId().getPath().substring(EmoteImageParser.PREFIX.length());
-        Identifier identifier = Identifier.fromNamespaceAndPath(baseImage.imageId().getNamespace(), path);
+        ResourceLocation identifier = ResourceLocation.fromNamespaceAndPath(baseImage.imageId().getNamespace(), path);
         OverlayEmoteImage image = EmoteImageFactory.createOverlayEmoteImage(baseImage, overlayImage, identifier, emoteNames);
         if(image == null)
             throw new EmoteParseException();

@@ -4,8 +4,8 @@ import com.mojang.blaze3d.platform.NativeImage;
 import me.dancedown.twitchemotes.TwitchEmotes;
 import net.minecraft.client.gui.font.GlyphRenderTypes;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.resources.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.Util;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +18,7 @@ public class AnimatedEmoteImage extends EmoteImage {
     private int lastIndex;
 
     public AnimatedEmoteImage(List<NativeImage> images, List<Integer> durations,
-                              Identifier imageId, DynamicTexture image, GlyphRenderTypes glyphRenderTypes,
+                              ResourceLocation imageId, DynamicTexture image, GlyphRenderTypes glyphRenderTypes,
                               int width, int height, int scale) {
         super(imageId, image, glyphRenderTypes, width, height, scale);
         this.images = images.toArray(NativeImage[]::new);

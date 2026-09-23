@@ -3,7 +3,7 @@ package me.dancedown.twitchemotes.emote.image;
 import com.mojang.blaze3d.platform.NativeImage;
 import net.minecraft.client.gui.font.GlyphRenderTypes;
 import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
 public class OverlayEmoteImage extends EmoteImage {
 
@@ -13,7 +13,7 @@ public class OverlayEmoteImage extends EmoteImage {
     private int lastSignatureBase;
     private int lastSignatureOverlay;
 
-    protected OverlayEmoteImage(EmoteImage baseImage, EmoteImage overlayImage, Identifier imageId, DynamicTexture texture, GlyphRenderTypes types, int width, int height, int scale) {
+    protected OverlayEmoteImage(EmoteImage baseImage, EmoteImage overlayImage, ResourceLocation imageId, DynamicTexture texture, GlyphRenderTypes types, int width, int height, int scale) {
         super(imageId, texture, types, width, height, scale);
         this.baseImage = baseImage;
         this.overlayImage = overlayImage;

@@ -11,7 +11,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.font.TextRenderable;
 import net.minecraft.client.gui.font.glyphs.BakedGlyph;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Style;
 import org.joml.Matrix4f;
 import org.jspecify.annotations.NonNull;
@@ -58,8 +58,8 @@ public class BakedEmoteGlyph implements BakedGlyph {
      * @return A new BakedEmoteGlyph.GlyphInstance
      */
     @Override
-    public TextRenderable.Styled createGlyph(float x, float y, int color, int shadowColor, @NonNull Style style, float boldOffset, float shadowOffset) {
-        return new GlyphInstance(x, y, color, style, this);
+    public TextRenderable createGlyph(float x, float y, int color, int shadowColor, @NonNull Style style, float boldOffset, float shadowOffset) {
+        return new GlyphInstance(x, y, color, this);
     }
 
     static class EmoteGlyphInfo implements GlyphInfo {
@@ -106,8 +106,8 @@ public class BakedEmoteGlyph implements BakedGlyph {
         }
     }
 
-    record GlyphInstance(float x, float y, int color, Style style, BakedEmoteGlyph glyph)
-            implements TextRenderable.Styled {
+    record GlyphInstance(float x, float y, int color, BakedEmoteGlyph glyph)
+            implements TextRenderable {
 
         private static final float offsetY = 1;
 
@@ -161,10 +161,6 @@ public class BakedEmoteGlyph implements BakedGlyph {
             return y + glyph.maxHeight - offsetY;
         }
 
-        @Override
-        public @NonNull Style style() {
-            return style;
-        }
     }
 
 }
