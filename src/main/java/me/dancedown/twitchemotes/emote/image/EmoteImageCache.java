@@ -3,6 +3,7 @@ package me.dancedown.twitchemotes.emote.image;
 import me.dancedown.twitchemotes.TwitchEmotes;
 import me.dancedown.twitchemotes.emote.render.BakedEmoteGlyph;
 import me.dancedown.twitchemotes.emote.type.Emote;
+import me.dancedown.twitchemotes.exception.EmoteStyleNotRecognizedException;
 import me.dancedown.twitchemotes.network.NetworkHandler;
 import net.minecraft.client.Minecraft;
 import org.jspecify.annotations.NonNull;
@@ -153,6 +154,21 @@ public class EmoteImageCache {
      */
     public BakedEmoteGlyph getGlyph(@NonNull String name) {
         return EMOTE_GLYPH_CACHE.getOrDefault(name, null);
+    }
+
+    /**
+     * Retrieves the glyph to a custom emote style or creates it if necessary.
+     * @param name The custom style
+     * @return The prepared BakedEmoteGlyph
+     * @throws EmoteStyleNotRecognizedException If the emote image isn't in the cache
+     */
+    public BakedEmoteGlyph getOrCreateGlyph(@NonNull String name) throws EmoteStyleNotRecognizedException {
+        BakedEmoteGlyph bakedEmoteGlyph = getGlyph(name);
+        if(bakedEmoteGlyph == null) {
+            bakedEmoteGlyph = new BakedEmoteGlyph(name);
+            addGlyph(name, bakedEmoteGlyph);
+        }
+        return bakedEmoteGlyph;
     }
 
     /**

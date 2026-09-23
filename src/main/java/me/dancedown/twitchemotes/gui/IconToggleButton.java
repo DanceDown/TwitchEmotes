@@ -4,16 +4,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.texture.SpriteContents;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.data.AtlasIds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
-import org.jspecify.annotations.NonNull;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -43,8 +39,7 @@ public class IconToggleButton extends Button {
         this.value = initial;
         this.renderCheckbox = renderCheckbox;
         this.onToggle = onToggle;
-        TextureAtlas textureAtlas = Minecraft.getInstance().getAtlasManager().getAtlasOrThrow(AtlasIds.GUI);
-        try (SpriteContents c = textureAtlas.getSprite(icon).contents()){
+        try (SpriteContents c = Minecraft.getInstance().getGuiSprites().getSprite(icon).contents()){
             this.spriteWidth = c.width();
             this.spriteHeight = c.height();
         }
@@ -130,14 +125,9 @@ public class IconToggleButton extends Button {
     }
 
     @Override
-    public void onPress(@NonNull InputWithModifiers inputWithModifiers) {
+    public void onPress() {
         value = !value;
         onToggle.accept(value);
-        super.onPress(inputWithModifiers);
-    }
-
-    @Override
-    public boolean shouldTakeFocusAfterInteraction() {
-        return false;
+        super.onPress();
     }
 }

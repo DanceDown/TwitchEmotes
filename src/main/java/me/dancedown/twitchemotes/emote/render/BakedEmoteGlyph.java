@@ -1,65 +1,104 @@
 package me.dancedown.twitchemotes.emote.render;
 
 import com.mojang.blaze3d.font.GlyphInfo;
-import com.mojang.blaze3d.pipeline.RenderPipeline;
-import com.mojang.blaze3d.textures.GpuTextureView;
+import com.mojang.blaze3d.font.SheetGlyphInfo;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import me.dancedown.twitchemotes.TwitchEmotes;
 import me.dancedown.twitchemotes.emote.image.EmoteImage;
 import me.dancedown.twitchemotes.exception.EmoteStyleNotRecognizedException;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.font.TextRenderable;
 import net.minecraft.client.gui.font.glyphs.BakedGlyph;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.network.chat.Style;
 import org.joml.Matrix4f;
 import org.jspecify.annotations.NonNull;
 
-public class BakedEmoteGlyph implements BakedGlyph {
+import java.util.function.Function;
+
+public class BakedEmoteGlyph extends BakedGlyph {
 
     private final int maxHeight;
     private final float emoteHeight;
     private final float emoteWidth;
-    private final EmoteImage emoteImage;
     private final EmoteGlyphInfo emoteGlyphInfo;
+    private static final float offsetY = 1;
 
+    /**
+     * Creates a new BakedEmoteGlyph from the given emote name.
+     * @param emoteName The name of the emote to render
+     * @throws EmoteStyleNotRecognizedException If the emote is not in the cache
+     */
     public BakedEmoteGlyph(@NonNull String emoteName) throws EmoteStyleNotRecognizedException {
-        // Retrieving the EmoteImage from the insertion of the style
+        this(getEmoteImage(emoteName));
+    }
+
+    private BakedEmoteGlyph(@NonNull EmoteImage image) {
+        super(
+                image.glyphRenderTypes(),
+                image.gpuTextureView(),
+                0, 1, 0, 1,
+                0,
+                getEmoteWidth(image),
+                getMaxHeight() - getEmoteHeight(image) - offsetY,
+                getMaxHeight() - offsetY
+        );
+
+        this.maxHeight = getMaxHeight();
+        this.emoteHeight = getEmoteHeight(image);
+        this.emoteWidth = getEmoteWidth(image);
+        this.emoteGlyphInfo = new EmoteGlyphInfo((int) Math.ceil(emoteWidth));
+    }
+
+    /**
+     * Returns the EmoteImage from the cache.
+     * @param emoteName The name of the emote to render
+     * @return The EmoteImage stored in the cache
+     * @throws EmoteStyleNotRecognizedException If the emote is not in the cache
+     */
+    private static EmoteImage getEmoteImage(@NonNull String emoteName) throws EmoteStyleNotRecognizedException {
         EmoteImage image = TwitchEmotes.EMOTE_IMAGE_CACHE.get(emoteName);
         if(image == null)
             throw new EmoteStyleNotRecognizedException();
+        return image;
+    }
 
-        this.emoteImage = image;
-        this.maxHeight = Minecraft.getInstance().font.lineHeight;
-        // Calculating the ratio of the image to the quality size (canvas size)
-        this.emoteHeight = Math.min(1.f, image.height() / (32.f * image.scale())) * this.maxHeight;
-        this.emoteWidth = this.emoteHeight * image.width() / image.height();
-        this.emoteGlyphInfo = new EmoteGlyphInfo((int) Math.ceil(emoteWidth));
+    private static int getMaxHeight() {
+        return Minecraft.getInstance().font.lineHeight;
+    }
+
+    private static float getEmoteHeight(@NonNull EmoteImage image) {
+        return Math.min(1.f, image.height() / (32.f * image.scale())) * getMaxHeight();
+    }
+
+    private static float getEmoteWidth(@NonNull EmoteImage image) {
+        return getEmoteHeight(image) * image.width() / image.height();
     }
 
     /**
      * @return The GlyphInfo containing the advance
      */
-    @Override
     public @NonNull GlyphInfo info() {
         return emoteGlyphInfo;
     }
 
     /**
-     * Returns a new renderable instance of the emote
-     * @param x The x position
-     * @param y The y position
-     * @param color The color (only alpha is taken into consideration)
-     * @param shadowColor The shadow color (ignored)
-     * @param style The style of the emote (ignored)
-     * @param boldOffset The bold offset (ignored)
-     * @param shadowOffset The shadow offset (ignored)
-     * @return A new BakedEmoteGlyph.GlyphInstance
+     * Renders the emote without using Minecraft's default glyph shadow rendering.
+     * @param glyphInstance The glyph instance containing position and color
+     * @param matrix4f The current transformation matrix
+     * @param vertexConsumer The vertex consumer to draw to
+     * @param light The packed light value
+     * @param seeThrough If see-through rendering is used (ignored)
      */
     @Override
-    public TextRenderable createGlyph(float x, float y, int color, int shadowColor, @NonNull Style style, float boldOffset, float shadowOffset) {
-        return new GlyphInstance(x, y, color, this);
+    public void renderChar(GlyphInstance glyphInstance, Matrix4f matrix4f, VertexConsumer vertexConsumer, int light, boolean seeThrough) {
+        float left = glyphInstance.x();
+        float right = left + emoteWidth;
+        float bottom = glyphInstance.y() + maxHeight - offsetY;
+        float top = glyphInstance.y() + maxHeight - emoteHeight - offsetY;
+        int color = glyphInstance.color();
+
+        vertexConsumer.addVertex(matrix4f, left, top, 0f).setColor(color).setUv(0, 0).setLight(light);
+        vertexConsumer.addVertex(matrix4f, left, bottom, 0f).setColor(color).setUv(0, 1).setLight(light);
+        vertexConsumer.addVertex(matrix4f, right, bottom, 0f).setColor(color).setUv(1, 1).setLight(light);
+        vertexConsumer.addVertex(matrix4f, right, top, 0f).setColor(color).setUv(1, 0).setLight(light);
     }
 
     static class EmoteGlyphInfo implements GlyphInfo {
@@ -104,63 +143,11 @@ public class BakedEmoteGlyph implements BakedGlyph {
         public float getShadowOffset() {
             return 0;
         }
-    }
-
-    record GlyphInstance(float x, float y, int color, BakedEmoteGlyph glyph)
-            implements TextRenderable {
-
-        private static final float offsetY = 1;
 
         @Override
-        public void render(@NonNull Matrix4f matrix4f, @NonNull VertexConsumer vertexConsumer, int light, boolean bold) {
-
-            float left = x;
-            float right = left + glyph.emoteWidth;
-            float bottom = y + glyph.maxHeight - offsetY;
-            float top = y + glyph.maxHeight - glyph.emoteHeight - offsetY;
-
-            vertexConsumer.addVertex(matrix4f, left, top, 0f).setColor(color).setUv(0, 0).setLight(light);
-            vertexConsumer.addVertex(matrix4f, left, bottom, 0f).setColor(color).setUv(0, 1).setLight(light);
-            vertexConsumer.addVertex(matrix4f, right, bottom, 0f).setColor(color).setUv(1, 1).setLight(light);
-            vertexConsumer.addVertex(matrix4f, right, top, 0f).setColor(color).setUv(1, 0).setLight(light);
-
+        public @NonNull BakedGlyph bake(Function<SheetGlyphInfo, BakedGlyph> function) {
+            throw new UnsupportedOperationException();
         }
-
-        @Override
-        public @NonNull RenderType renderType(Font.@NonNull DisplayMode displayMode) {
-            return glyph.emoteImage.glyphRenderTypes().select(displayMode);
-        }
-
-        @Override
-        public @NonNull GpuTextureView textureView() {
-            return glyph.emoteImage.gpuTextureView();
-        }
-
-        @Override
-        public @NonNull RenderPipeline guiPipeline() {
-            return glyph.emoteImage.glyphRenderTypes().guiPipeline();
-        }
-
-        @Override
-        public float left() {
-            return x;
-        }
-
-        @Override
-        public float top() {
-            return y + glyph.maxHeight - glyph.emoteHeight - offsetY;
-        }
-
-        @Override
-        public float right() {
-            return x + glyph.emoteWidth;
-        }
-
-        @Override
-        public float bottom() {
-            return y + glyph.maxHeight - offsetY;
-        }
-
     }
 
 }
