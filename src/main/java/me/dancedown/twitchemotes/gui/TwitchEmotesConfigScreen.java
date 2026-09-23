@@ -9,10 +9,6 @@ import net.minecraft.client.OptionInstance;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.layouts.GridLayout;
-import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
-import net.minecraft.client.gui.layouts.LinearLayout;
-import net.minecraft.client.gui.layouts.SpacerElement;
 import net.minecraft.client.gui.screens.ConfirmScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
@@ -57,27 +53,26 @@ public class TwitchEmotesConfigScreen extends Screen {
     protected void init() {
         clearWidgets();
 
-        SpriteIconButton enabledButton = SpriteIconButton.builder(Component.empty(), x -> {
-            enabled = !enabled;
-            this.init();
-                }, true)
-                .sprite(new ResourceLocation("pending_invite/" + (enabled ? "accept" : "reject")), 16, 16)
-                .size(20, 20).build();
-        enabledButton.setPosition(width - enabledButton.getWidth() - 4, 4);
+        Button enabledButton = new EnabledButton(width - 24, 4);
         addRenderableWidget(enabledButton);
 
         // Header and Settings
-        HeaderAndFooterLayout mainLayout = new HeaderAndFooterLayout(this);
         assert minecraft != null;
-        mainLayout.addToHeader(new StringWidget(Component.translatable("title.twitchemotes.config"), minecraft.font));
-        mainLayout.setHeaderHeight(minecraft.font.lineHeight + 12);
-        LinearLayout contentLayout = mainLayout.addToContents(LinearLayout.vertical());
-        contentLayout.defaultCellSetting().alignHorizontallyCenter();
-        contentLayout.addChild(new StringWidget(Component.translatable("editboxlabel.twitchemotes.channelbox"), minecraft.font));
-        contentLayout.addChild(new SpacerElement(width,4));
-        EditBox channelEditBox = contentLayout.addChild(new EditBox(minecraft.font, width / 3, 20, Component.empty()));
+        addRenderableWidget(new StringWidget(0, 6, width, minecraft.font.lineHeight,
+                Component.translatable("title.twitchemotes.config"), minecraft.font).alignCenter());
+
+        int fieldWidth = width / 3;
+        int headerGap = Math.max(8, height / 8);
+        int contentY = minecraft.font.lineHeight + headerGap;
+        addRenderableWidget(new StringWidget(0, contentY, width, minecraft.font.lineHeight,
+                Component.translatable("editboxlabel.twitchemotes.channelbox"), minecraft.font).alignCenter());
+
+        EditBox channelEditBox = new EditBox(minecraft.font, (width - fieldWidth) / 2,
+                contentY + minecraft.font.lineHeight + 4, fieldWidth, 20, Component.empty());
         channelEditBox.setValue(channelName);
         channelEditBox.setResponder(value -> channelName = value);
+        addRenderableWidget(channelEditBox);
+
         OptionInstance<Integer> emoteQualityOption = new OptionInstance<>(
                 "slider.twitchemotes.quality",
                 OptionInstance.noTooltip(),
@@ -86,55 +81,63 @@ public class TwitchEmotesConfigScreen extends Screen {
                 qualityPreference,
                 value -> qualityPreference = value
         );
-        contentLayout.addChild(new SpacerElement(width,12));
-        contentLayout.addChild(new StringWidget(Component.translatable("editboxlabel.twitchemotes.quality"), minecraft.font));
-        contentLayout.addChild(new SpacerElement(width,4));
-        contentLayout.addChild(emoteQualityOption.createButton(minecraft.options, 0, 0, width / 3));
-        contentLayout.addChild(new SpacerElement(0, 12));
+
+        int qualityLabelY = channelEditBox.getY() + channelEditBox.getHeight() + 12;
+        addRenderableWidget(new StringWidget(0, qualityLabelY, width, minecraft.font.lineHeight,
+                Component.translatable("editboxlabel.twitchemotes.quality"), minecraft.font).alignCenter());
+        addRenderableWidget(emoteQualityOption.createButton(minecraft.options, (width - fieldWidth) / 2,
+                qualityLabelY + minecraft.font.lineHeight + 4, fieldWidth));
 
         // Buttons Grid
-        GridLayout buttonLayout = contentLayout.addChild(new GridLayout());
-        buttonLayout.defaultCellSetting().paddingHorizontal(4).paddingBottom(4).alignHorizontallyCenter();
-        GridLayout.RowHelper rh = buttonLayout.createRowHelper(4);
+        int footerY = height - 28;
+        int buttonWidth = width / 5;
+        int gridGapX = 8;
+        int gridGapY = 4;
+        int gridWidth = buttonWidth * 4 + gridGapX * 3;
+        int gridX = (width - gridWidth) / 2;
+        int gridY = qualityLabelY + minecraft.font.lineHeight + 36;
+        int footerGap = 12;
+        int availableGridHeight = footerY - footerGap - gridY - gridGapY;
+        int buttonHeight = Math.max(20, Math.min(height / 5, availableGridHeight / 2));
         // twitch
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX, gridY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.loadtwitchemotes"),
                 new ResourceLocation("twitchemotes", "twitch"),
                 loadTwitchEmotes, true, value -> loadTwitchEmotes = value));
         // 7tv
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX + buttonWidth + gridGapX, gridY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.loadstv"),
                 new ResourceLocation("twitchemotes", "7tv"),
                 loadSTVEmotes, true, value -> loadSTVEmotes = value));
         // bttv
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX + (buttonWidth + gridGapX) * 2, gridY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.loadbttv"),
                 new ResourceLocation("twitchemotes", "betterttv"),
                 loadBTTVEmotes, true, value -> loadBTTVEmotes = value));
         // ffz
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX + (buttonWidth + gridGapX) * 3, gridY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.loadffz"),
                 new ResourceLocation("twitchemotes", "frankerfacez"),
                 loadFFZEmotes, true, value -> loadFFZEmotes = value));
         // unlisted
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX, gridY + buttonHeight + gridGapY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.unlisted"),
                 new ResourceLocation("twitchemotes", "unlisted"),
                 loadUnlistedEmotes, true, value -> loadUnlistedEmotes = value));
         // overlay
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX + buttonWidth + gridGapX, gridY + buttonHeight + gridGapY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.overlay"),
                 new ResourceLocation("twitchemotes", "overlay"),
                 overlayEmotes, true, value -> overlayEmotes = value));
         // animate
-        rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        addRenderableWidget(new IconToggleButton(gridX + (buttonWidth + gridGapX) * 2, gridY + buttonHeight + gridGapY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.animate"),
                 new ResourceLocation("twitchemotes", "animated"),
                 animateEmotes, true, value -> animateEmotes = value));
@@ -143,8 +146,9 @@ public class TwitchEmotesConfigScreen extends Screen {
                 && TwitchEmotes.CONFIG.twitchOAuthToken != null
                 && !TwitchEmotes.CONFIG.twitchClientId.isBlank()
                 && !TwitchEmotes.CONFIG.twitchOAuthToken.isBlank();
-        IconToggleButton btn = rh.addChild(new IconToggleButton(0, 0,
-                width / 5, height / 5,
+        IconToggleButton btn = addRenderableWidget(new IconToggleButton(gridX + (buttonWidth + gridGapX) * 3,
+                gridY + buttonHeight + gridGapY,
+                buttonWidth, buttonHeight,
                 Component.translatable("button.twitchemotes.login"),
                 new ResourceLocation("twitchemotes", "key"),
                 loggedIn, true, value -> {
@@ -173,20 +177,18 @@ public class TwitchEmotesConfigScreen extends Screen {
             );
 
         // Footer
-        LinearLayout footerButtonLayout = mainLayout.addToFooter(LinearLayout.horizontal().spacing(4));
-        footerButtonLayout.defaultCellSetting().alignHorizontallyCenter();
-        footerButtonLayout.addChild(Button.builder(CommonComponents.GUI_CANCEL,
-                button -> minecraft.setScreen(lastScreen)).build());
-        footerButtonLayout.addChild(Button.builder(Component.translatable("button.twitchemotes.save"),
+        int footerX = width / 2 - 154;
+        addRenderableWidget(Button.builder(CommonComponents.GUI_CANCEL,
+                button -> minecraft.setScreen(lastScreen)).bounds(footerX, footerY, 150, 20).build());
+        addRenderableWidget(Button.builder(Component.translatable("button.twitchemotes.save"),
                 button -> {
                     if(handleSave()) minecraft.setScreen(lastScreen);
-                }).build());
-        mainLayout.visitWidgets(this::addRenderableWidget);
-        mainLayout.arrangeElements();
+                }).bounds(footerX + 158, footerY, 150, 20).build());
     }
 
     @Override
     public void render(@NonNull GuiGraphics guiGraphics, int i, int j, float f) {
+        renderBackground(guiGraphics);
         super.render(guiGraphics, i, j, f);
     }
 
@@ -239,6 +241,22 @@ public class TwitchEmotesConfigScreen extends Screen {
                 return false;
             }
         return true;
+    }
+
+    private class EnabledButton extends Button {
+        private EnabledButton(int x, int y) {
+            super(x, y, 20, 20, Component.empty(), button -> {
+                enabled = !enabled;
+                TwitchEmotesConfigScreen.this.init();
+            }, DEFAULT_NARRATION);
+        }
+
+        @Override
+        protected void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
+            int bgColor = isHoveredOrFocused() ? 0x4F888888 : 0x4F000000;
+            guiGraphics.fill(getX(), getY(), getX() + getWidth(), getY() + getHeight(), bgColor);
+            IconToggleButton.renderToggleMark(guiGraphics, getX() + 4, getY() + 4, 12, enabled);
+        }
     }
 
 }

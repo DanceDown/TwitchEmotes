@@ -1,8 +1,8 @@
 package me.dancedown.twitchemotes.mixin;
 
 import me.dancedown.twitchemotes.gui.TwitchEmotesConfigScreen;
+import me.dancedown.twitchemotes.gui.IconToggleButton;
 import net.minecraft.client.gui.ComponentPath;
-import net.minecraft.client.gui.components.SpriteIconButton;
 import net.minecraft.client.gui.navigation.FocusNavigationEvent;
 import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.client.gui.screens.Screen;
@@ -25,19 +25,18 @@ public abstract class ChatScreenMixin extends Screen {
     @Inject(method = "init", at = @At("TAIL"))
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
         ResourceLocation icon = new ResourceLocation("twitchemotes", "twitch");
-        SpriteIconButton widget = new SpriteIconButton.CenteredIcon(
-                20, 20, Component.empty(), 12, 14, icon, b ->
-        {
-            assert this.minecraft != null;
-            this.minecraft.setScreen(new TwitchEmotesConfigScreen(this));
-        }
+        IconToggleButton widget = new IconToggleButton(
+                4, 2, 20, 20, Component.empty(), icon, false, false,
+                b -> {
+                    assert this.minecraft != null;
+                    this.minecraft.setScreen(new TwitchEmotesConfigScreen(this));
+                }
         ) {
             @Override
             public @Nullable ComponentPath nextFocusPath(@NotNull FocusNavigationEvent focusNavigationEvent) {
                 return null;
             }
         };
-        widget.setPosition(4, 2);
         addRenderableWidget(widget);
     }
 }

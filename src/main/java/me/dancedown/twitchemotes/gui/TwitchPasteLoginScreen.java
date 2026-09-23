@@ -4,6 +4,7 @@ import me.dancedown.twitchemotes.TwitchEmotes;
 import me.dancedown.twitchemotes.config.TwitchEmotesConfig;
 import me.dancedown.twitchemotes.network.NetworkHandler;
 import me.dancedown.twitchemotes.network.ProviderType;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.StringWidget;
 import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
@@ -49,6 +50,12 @@ public class TwitchPasteLoginScreen extends Screen {
         layout.addToFooter(Button.builder(CommonComponents.GUI_CANCEL, b -> minecraft.setScreen(screen)).build());
         layout.visitWidgets(this::addRenderableWidget);
         layout.arrangeElements();
+    }
+
+    @Override
+    public void render(GuiGraphics guiGraphics, int i, int j, float f) {
+        renderBackground(guiGraphics);
+        super.render(guiGraphics, i, j, f);
     }
 
     /**

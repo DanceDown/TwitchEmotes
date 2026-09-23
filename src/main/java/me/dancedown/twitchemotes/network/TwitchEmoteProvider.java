@@ -199,7 +199,7 @@ public class TwitchEmoteProvider extends EmoteProvider {
             JsonObject obj;
             try {
                 obj = networkHandler.getObjectResponse(SEC_URL + "channel/" + config.twitchChannelName);
-                if(obj != null && !obj.isJsonNull() && !obj.isEmpty() && !obj.has("error"))
+                if(obj != null && !obj.isJsonNull() && !obj.entrySet().isEmpty() && !obj.has("error"))
                     response = convertIvrFormatChannel(obj.getAsJsonObject());
             } catch (URISyntaxException | IOException ignored) {}
         }

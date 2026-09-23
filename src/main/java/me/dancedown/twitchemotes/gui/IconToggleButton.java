@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.renderer.texture.SpriteContents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
@@ -38,10 +37,8 @@ public class IconToggleButton extends Button {
         this.value = initial;
         this.renderCheckbox = renderCheckbox;
         this.onToggle = onToggle;
-        try (SpriteContents c = Minecraft.getInstance().getGuiSprites().getSprite(icon).contents()){
-            this.spriteWidth = c.width();
-            this.spriteHeight = c.height();
-        }
+        this.spriteWidth = getSpriteWidth(icon);
+        this.spriteHeight = getSpriteHeight(icon);
     }
 
     @Override
@@ -56,8 +53,9 @@ public class IconToggleButton extends Button {
         guiGraphics.fill(x, y, x+w, y+h, bgColor);
 
         // icon
+        boolean iconOnly = this.getMessage().getString().isEmpty() && !renderCheckbox;
         int maxIconWidth  = (int)(this.getWidth() * 0.8f);
-        int maxIconHeight = (int)(this.getHeight() * 0.6f);
+        int maxIconHeight = (int)(this.getHeight() * (iconOnly ? 0.8f : 0.6f));
         float scale = Math.min(
                 (float) maxIconWidth  / spriteWidth,
                 (float) maxIconHeight / spriteHeight
@@ -65,29 +63,39 @@ public class IconToggleButton extends Button {
         int drawW = (int)(spriteWidth * scale);
         int drawH = (int)(spriteHeight * scale);
         int drawX = this.getX() + (this.getWidth() - drawW) / 2;
-        int drawY = this.getY() + 6;
-        guiGraphics.blitSprite(icon,
+        int drawY = iconOnly
+                ? this.getY() + (this.getHeight() - drawH) / 2
+                : this.getY() + 6;
+        guiGraphics.blit(new ResourceLocation(icon.getNamespace(), "textures/gui/sprites/" + icon.getPath() + ".png"),
                 drawX,
                 drawY,
                 drawW,
-                drawH
+                drawH,
+                0,
+                0,
+                spriteWidth,
+                spriteHeight,
+                spriteWidth,
+                spriteHeight
         );
 
         // text
-        Font font = Minecraft.getInstance().font;
-        int maxTextWidth = Math.max(1, width - 6);
-        List<FormattedCharSequence> lines = new ArrayList<>(font.split(this.getMessage(), maxTextWidth));
-        if(lines.size() > 2) {
-            lines = lines.subList(0, 2);
-            String shortened = font.plainSubstrByWidth(
-                    lines.get(1).toString(), maxTextWidth - font.width("...")
-            ) + "...";
-            lines.set(1, FormattedCharSequence.forward(shortened, Style.EMPTY));
-        }
-        int baseY = y + height - 4 - lines.size() * font.lineHeight;
+        if(!iconOnly) {
+            Font font = Minecraft.getInstance().font;
+            int maxTextWidth = Math.max(1, width - 6);
+            List<FormattedCharSequence> lines = new ArrayList<>(font.split(this.getMessage(), maxTextWidth));
+            if(lines.size() > 2) {
+                lines = lines.subList(0, 2);
+                String shortened = font.plainSubstrByWidth(
+                        lines.get(1).toString(), maxTextWidth - font.width("...")
+                ) + "...";
+                lines.set(1, FormattedCharSequence.forward(shortened, Style.EMPTY));
+            }
+            int baseY = y + height - 4 - lines.size() * font.lineHeight;
 
-        for(int index = 0; index < lines.size(); index++)
-            guiGraphics.drawCenteredString(font, lines.get(index), x + width / 2, baseY + index * (font.lineHeight + 1), 0xFFFFFFFF);
+            for(int index = 0; index < lines.size(); index++)
+                guiGraphics.drawCenteredString(font, lines.get(index), x + width / 2, baseY + index * (font.lineHeight + 1), 0xFFFFFFFF);
+        }
 
         // checkbox
         if(renderCheckbox) {
@@ -106,8 +114,7 @@ public class IconToggleButton extends Button {
             guiGraphics.vLine(bx, by, by + boxSize, Color.DARK_GRAY.getRGB());
             guiGraphics.vLine(bx + boxSize, by, by + boxSize, Color.DARK_GRAY.getRGB());
 
-            guiGraphics.blitSprite(new ResourceLocation("pending_invite/" + (value ? "accept" : "reject")),
-                    bx + 1, by + 1, boxSize - 1, boxSize - 1);
+            renderToggleMark(guiGraphics, bx + 1, by + 1, boxSize - 1, value);
         }
 
         // frame
@@ -126,5 +133,63 @@ public class IconToggleButton extends Button {
         value = !value;
         onToggle.accept(value);
         super.onPress();
+    }
+
+    public static void renderToggleMark(GuiGraphics guiGraphics, int x, int y, int size, boolean value) {
+        int color = value ? 0xFF55FF55 : 0xFFFF5555;
+        int padding = Math.max(1, size / 6);
+        int thickness = Math.max(1, size / 6);
+        if(value) {
+            int leftX = x + padding;
+            int leftY = y + size / 2;
+            int centerX = x + size / 2 - thickness;
+            int centerY = y + size - padding - thickness;
+            int rightX = x + size - padding - thickness;
+            int rightY = y + padding;
+
+            drawLine(guiGraphics, leftX, leftY, centerX, centerY, thickness, color);
+            drawLine(guiGraphics, centerX, centerY, rightX, rightY, thickness, color);
+        } else {
+            drawLine(guiGraphics, x + padding, y + padding,
+                    x + size - padding - thickness, y + size - padding - thickness,
+                    thickness, color);
+            drawLine(guiGraphics, x + size - padding - thickness, y + padding,
+                    x + padding, y + size - padding - thickness,
+                    thickness, color);
+        }
+    }
+
+    private static void drawLine(GuiGraphics guiGraphics, int x1, int y1, int x2, int y2, int thickness, int color) {
+        int steps = Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1));
+        if(steps == 0) {
+            guiGraphics.fill(x1, y1, x1 + thickness, y1 + thickness, color);
+            return;
+        }
+
+        for(int i = 0; i <= steps; i++) {
+            int px = x1 + Math.round((x2 - x1) * (i / (float) steps));
+            int py = y1 + Math.round((y2 - y1) * (i / (float) steps));
+            guiGraphics.fill(px, py, px + thickness, py + thickness, color);
+        }
+    }
+
+    private static int getSpriteWidth(ResourceLocation icon) {
+        return switch (icon.getPath()) {
+            case "7tv" -> 128;
+            case "frankerfacez" -> 249;
+            case "twitch" -> 1371;
+            case "overlay" -> 200;
+            default -> 512;
+        };
+    }
+
+    private static int getSpriteHeight(ResourceLocation icon) {
+        return switch (icon.getPath()) {
+            case "7tv" -> 128;
+            case "frankerfacez" -> 195;
+            case "twitch" -> 1600;
+            case "overlay" -> 200;
+            default -> 512;
+        };
     }
 }
