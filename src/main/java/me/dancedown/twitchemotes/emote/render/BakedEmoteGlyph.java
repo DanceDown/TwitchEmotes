@@ -97,10 +97,10 @@ public class BakedEmoteGlyph extends BakedGlyph {
         float bottom = y + maxHeight - offsetY;
         float top = y + maxHeight - emoteHeight - offsetY;
 
-        vertexConsumer.addVertex(matrix4f, x, top, 0f).setColor(r, g, b, a).setUv(0, 0).setLight(light);
-        vertexConsumer.addVertex(matrix4f, x, bottom, 0f).setColor(r, g, b, a).setUv(0, 1).setLight(light);
-        vertexConsumer.addVertex(matrix4f, right, bottom, 0f).setColor(r, g, b, a).setUv(1, 1).setLight(light);
-        vertexConsumer.addVertex(matrix4f, right, top, 0f).setColor(r, g, b, a).setUv(1, 0).setLight(light);
+        vertexConsumer.vertex(matrix4f, x, top, 0f).color(r, g, b, a).uv(0, 0).uv2(light).endVertex();
+        vertexConsumer.vertex(matrix4f, x, bottom, 0f).color(r, g, b, a).uv(0, 1).uv2(light).endVertex();
+        vertexConsumer.vertex(matrix4f, right, bottom, 0f).color(r, g, b, a).uv(1, 1).uv2(light).endVertex();
+        vertexConsumer.vertex(matrix4f, right, top, 0f).color(r, g, b, a).uv(1, 0).uv2(light).endVertex();
     }
 
     static class EmoteGlyphInfo implements GlyphInfo {

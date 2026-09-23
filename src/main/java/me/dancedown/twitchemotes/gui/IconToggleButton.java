@@ -106,7 +106,7 @@ public class IconToggleButton extends Button {
             guiGraphics.vLine(bx, by, by + boxSize, Color.DARK_GRAY.getRGB());
             guiGraphics.vLine(bx + boxSize, by, by + boxSize, Color.DARK_GRAY.getRGB());
 
-            guiGraphics.blitSprite(ResourceLocation.withDefaultNamespace("pending_invite/" + (value ? "accept" : "reject")),
+            guiGraphics.blitSprite(new ResourceLocation("pending_invite/" + (value ? "accept" : "reject")),
                     bx + 1, by + 1, boxSize - 1, boxSize - 1);
         }
 

@@ -24,7 +24,7 @@ public abstract class ChatScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
-        ResourceLocation icon = ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch");
+        ResourceLocation icon = new ResourceLocation("twitchemotes", "twitch");
         SpriteIconButton widget = new SpriteIconButton.CenteredIcon(
                 20, 20, Component.empty(), 12, 14, icon, b ->
         {

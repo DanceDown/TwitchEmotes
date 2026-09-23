@@ -22,7 +22,7 @@ public abstract class TitleScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
-        ResourceLocation icon = ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch");
+        ResourceLocation icon = new ResourceLocation("twitchemotes", "twitch");
         SpriteIconButton widget = SpriteIconButton.builder(Component.empty(),
                 b -> {
                     assert this.minecraft != null;

@@ -32,7 +32,7 @@ public class EmoteImageParser {
 
     public EmoteImageParser(String id, String name, int scale) {
         this.name = name;
-        this.id = ResourceLocation.fromNamespaceAndPath("twitchemotes",
+        this.id = new ResourceLocation("twitchemotes",
                 PREFIX + name.toLowerCase().replaceAll("[^a-z0-9._-]", "_") + "-" + id.toLowerCase());
         this.scale = scale;
     }
@@ -64,7 +64,7 @@ public class EmoteImageParser {
         String path = EmoteImageParser.PREFIX
                 + baseImage.imageId().getPath().substring(EmoteImageParser.PREFIX.length())
                 + overlayImage.imageId().getPath().substring(EmoteImageParser.PREFIX.length());
-        ResourceLocation identifier = ResourceLocation.fromNamespaceAndPath(baseImage.imageId().getNamespace(), path);
+        ResourceLocation identifier = new ResourceLocation(baseImage.imageId().getNamespace(), path);
         OverlayEmoteImage image = EmoteImageFactory.createOverlayEmoteImage(baseImage, overlayImage, identifier, emoteNames);
         if(image == null)
             throw new EmoteParseException();

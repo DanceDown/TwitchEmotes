@@ -40,7 +40,7 @@ public class TwitchPasteLoginScreen extends Screen {
         layout.addToContents(new IconToggleButton(
                 0, 0, width / 3, height / 2,
                 Component.translatable("button.twitchemotes.pastelogin"),
-                ResourceLocation.fromNamespaceAndPath("twitchemotes", "key"),
+                new ResourceLocation("twitchemotes", "key"),
                 false,
                 false,
                 b -> handleLogin()
