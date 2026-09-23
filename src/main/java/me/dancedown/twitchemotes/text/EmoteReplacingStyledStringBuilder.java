@@ -136,7 +136,7 @@ public class EmoteReplacingStyledStringBuilder {
         if(this.emoteNames.isEmpty())
             return;
         Style style = Style.EMPTY
-                .withHoverEvent(new HoverEvent.ShowText(hoverText))
+                .withHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverText))
                 .withInsertion(emoteNames.toString());
         if(spaceStyleBefore != null)
             add(finalStyleBuffer, spaceStyleBefore, DELIMITER);

@@ -26,7 +26,7 @@ public class EmoteImageFactory {
      */
     public static StaticEmoteImage createStaticEmoteImage(NativeImage image, ResourceLocation imageId, String textureName, int width, int height, int scale) {
         Supplier<StaticEmoteImage> emoteImageSupplier = () -> new StaticEmoteImage(image, imageId,
-                new DynamicTexture(() -> textureName, image),
+                new DynamicTexture(image),
                 GlyphRenderTypes.createForColorTexture(imageId),
                 width, height, scale);
         if(!Minecraft.getInstance().isSameThread()) {
@@ -53,7 +53,7 @@ public class EmoteImageFactory {
      */
     public static AnimatedEmoteImage createAnimatedEmoteImage(List<NativeImage> images, List<Integer> durations, ResourceLocation imageId, String textureName, int width, int height, int scale) {
         Supplier<AnimatedEmoteImage> emoteImageSupplier = () -> new AnimatedEmoteImage(images, durations, imageId,
-                        new DynamicTexture(textureName, width, height, true),
+                        new DynamicTexture(width, height, true),
                         GlyphRenderTypes.createForColorTexture(imageId),
                         width, height, scale);
         if(!Minecraft.getInstance().isSameThread())
@@ -86,7 +86,7 @@ public class EmoteImageFactory {
         );
         Supplier<OverlayEmoteImage> supplier = () ->
                 new OverlayEmoteImage(baseImage, overlayImage, imageId,
-                        new DynamicTexture(textureName, width, height, true),
+                        new DynamicTexture(width, height, true),
                         GlyphRenderTypes.createForColorTexture(imageId),
                         width, height, scale);
         if(!Minecraft.getInstance().isSameThread())

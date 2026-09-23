@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.NativeImage;
 import net.minecraft.client.gui.font.GlyphRenderTypes;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ARGB;
 
 public class OverlayEmoteImage extends EmoteImage {
 
@@ -96,9 +97,9 @@ public class OverlayEmoteImage extends EmoteImage {
                 int baseAlpha = (basePixel >>> 24);
                 // skip if transparent, draw directly if overlay is opaque or background is transparent
                 if(overlayAlpha == 255 || baseAlpha == 0)
-                    base.setPixelABGR(positionedX, positionedY, overlayPixel);
+                    base.setPixel(positionedX, positionedY, ARGB.fromABGR(overlayPixel));
                 else
-                    base.setPixelABGR(positionedX, positionedY, blendPixel(basePixel, baseAlpha, overlayPixel, overlayAlpha));
+                    base.setPixel(positionedX, positionedY, ARGB.fromABGR(blendPixel(basePixel, baseAlpha, overlayPixel, overlayAlpha)));
             }
         }
     }
