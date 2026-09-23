@@ -35,6 +35,7 @@ public class TwitchPasteLoginScreen extends Screen {
     protected void init() {
         clearWidgets();
         HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this);
+        assert minecraft != null;
         layout.addTitleHeader(Component.translatable("title.twitchemotes.pastelogin"), minecraft.font);
         layout.addToContents(new IconToggleButton(
                 0, 0, width / 3, height / 2,
@@ -60,6 +61,7 @@ public class TwitchPasteLoginScreen extends Screen {
         isLoggingIn.set(true);
 
         // Getting clipboard and setting local variables
+        assert minecraft != null;
         String clipboard = minecraft.keyboardHandler.getClipboard();
         String[] fields = clipboard.split(";");
         for(String field : fields) {

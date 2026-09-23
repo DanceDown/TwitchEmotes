@@ -68,6 +68,7 @@ public class TwitchEmotesConfigScreen extends Screen {
 
         // Header and Settings
         HeaderAndFooterLayout mainLayout = new HeaderAndFooterLayout(this);
+        assert minecraft != null;
         mainLayout.addTitleHeader(Component.translatable("title.twitchemotes.config"), minecraft.font);
         mainLayout.setHeaderHeight(minecraft.font.lineHeight + 12);
         LinearLayout contentLayout = mainLayout.addToContents(LinearLayout.vertical());

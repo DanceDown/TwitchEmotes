@@ -1,7 +1,6 @@
 package me.dancedown.twitchemotes.text;
 
 import com.mojang.datafixers.util.Pair;
-import me.dancedown.twitchemotes.TwitchEmotes;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
 import org.jspecify.annotations.NonNull;

@@ -3,7 +3,6 @@ package me.dancedown.twitchemotes.network;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import me.dancedown.twitchemotes.TwitchEmotes;
 import me.dancedown.twitchemotes.config.TwitchEmotesConfig;
 import me.dancedown.twitchemotes.emote.type.Emote;
 import me.dancedown.twitchemotes.emote.type.EmoteFormat;

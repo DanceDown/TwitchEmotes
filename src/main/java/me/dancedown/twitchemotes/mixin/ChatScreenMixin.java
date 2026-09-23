@@ -28,7 +28,10 @@ public abstract class ChatScreenMixin extends Screen {
         ResourceLocation icon = ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch");
         SpriteIconButton widget = new SpriteIconButton.CenteredIcon(
                 20, 20, Component.empty(), 12, 14, new WidgetSprites(icon), b ->
-                this.minecraft.setScreen(new TwitchEmotesConfigScreen(this)), null, null
+        {
+            assert this.minecraft != null;
+            this.minecraft.setScreen(new TwitchEmotesConfigScreen(this));
+        }, null, null
         ) {
             @Override
             public @Nullable ComponentPath nextFocusPath(@NotNull FocusNavigationEvent focusNavigationEvent) {

@@ -24,7 +24,10 @@ public abstract class TitleScreenMixin extends Screen {
     public void addTwitchEmotesConfigButton(CallbackInfo info) {
         ResourceLocation icon = ResourceLocation.fromNamespaceAndPath("twitchemotes", "twitch");
         SpriteIconButton widget = SpriteIconButton.builder(Component.empty(),
-                b -> this.minecraft.setScreen(new TwitchEmotesConfigScreen(this)),
+                b -> {
+                    assert this.minecraft != null;
+                    this.minecraft.setScreen(new TwitchEmotesConfigScreen(this));
+                },
                 true).size(20, 20).sprite(icon, 12, 14).build();
         widget.setPosition(4, 2);
         addRenderableWidget(widget);
