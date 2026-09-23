@@ -156,7 +156,7 @@ public class TwitchEmotesConfigScreen extends Screen {
                                 minecraft.setScreen(new TwitchPasteLoginScreen(this));
                             } else minecraft.setScreen(this);
                         }, Component.translatable("chat.link.confirmTrusted"),
-                        Component.literal("https://chatterino.com/client_login").withColor(0x8800FF)
+                        Component.literal("https://chatterino.com/client_login").withStyle(style -> style.withColor(0x8800FF))
                 ));
             } else {
                 TwitchEmotes.CONFIG.twitchUserName = null;
@@ -169,7 +169,7 @@ public class TwitchEmotesConfigScreen extends Screen {
         if(loggedIn && TwitchEmotes.CONFIG.twitchDisplayName != null)
             btn.setTooltip(Tooltip.create(
                     Component.translatable("tooltip.twitchemotes.loggedinas",
-                            TwitchEmotes.CONFIG.twitchDisplayName).withColor(0x8800FF))
+                            TwitchEmotes.CONFIG.twitchDisplayName).withStyle(style -> style.withColor(0x8800FF)))
             );
 
         // Footer

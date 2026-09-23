@@ -86,7 +86,7 @@ public class TwitchPasteLoginScreen extends Screen {
         config.twitchOAuthToken = oauth_token;
         String displayName = networkHandler.validateTwitchUser(config);
         if(displayName != null) {
-            ToastNotification.toast(Component.translatable("toast.twitchemotes.loggedinas", displayName).withColor(Color.GREEN.getRGB()),null);
+            ToastNotification.toast(Component.translatable("toast.twitchemotes.loggedinas", displayName).withStyle(style -> style.withColor(Color.GREEN.getRGB())),null);
             TwitchEmotes.CONFIG.twitchUserId = user_id;
             TwitchEmotes.CONFIG.twitchUserName = username;
             TwitchEmotes.CONFIG.twitchClientId = client_id;

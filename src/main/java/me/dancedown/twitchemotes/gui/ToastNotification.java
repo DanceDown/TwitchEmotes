@@ -17,14 +17,14 @@ public final class ToastNotification {
      * @param transDesc A translation key for the description of the Toast or <code>null</code> if not needed
      */
     public static void toast(@NotNull String transTitle, @Nullable String transDesc, Color color) {
-        toast(Component.translatable(transTitle).withColor(color.getRGB()),
-                transDesc != null ? Component.translatable(transDesc).withColor(color.getRGB()) : null);
+        toast(Component.translatable(transTitle).withStyle(style -> style.withColor(color.getRGB())),
+                transDesc != null ? Component.translatable(transDesc).withStyle(style -> style.withColor(color.getRGB())) : null);
     }
 
     public static void toast(@NotNull MutableComponent title, @Nullable MutableComponent desc) {
         Minecraft mc = Minecraft.getInstance();
         mc.execute(() -> mc.getToasts().addToast(
-                new SystemToast(SystemToast.SystemToastId.PERIODIC_NOTIFICATION, title, desc))
+                new SystemToast(SystemToast.SystemToastIds.PERIODIC_NOTIFICATION, title, desc))
         );
     }
 

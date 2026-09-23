@@ -150,14 +150,14 @@ public class TwitchEmotes implements ClientModInitializer {
             if (result.successful()) {
                 ToastNotification.toast(
                         Component.translatable("toast.twitchemotes.reloaded")
-                                .withColor(Color.GREEN.getRGB()),
+                                .withStyle(style -> style.withColor(Color.GREEN.getRGB())),
                         null
                 );
                 return;
             } else if (result.failed()) {
                 ToastNotification.toast(
                         Component.translatable("toast.twitchemotes.reloadfailed")
-                                .withColor(Color.RED.getRGB()),
+                                .withStyle(style -> style.withColor(Color.RED.getRGB())),
                         null
                 );
                 return;
@@ -177,14 +177,14 @@ public class TwitchEmotes implements ClientModInitializer {
                 if (providerResult.successful()) {
                     ToastNotification.toast(
                             Component.translatable("toast.twitchemotes.reloadedprovider", type.getDisplayName())
-                                    .withColor(Color.GREEN.getRGB()),
+                                    .withStyle(style -> style.withColor(Color.GREEN.getRGB())),
                             null
                     );
                     continue;
                 } else if (providerResult.failed()) {
                     ToastNotification.toast(
                             Component.translatable("toast.twitchemotes.reloadproviderfailed", type.getDisplayName())
-                                    .withColor(Color.RED.getRGB()),
+                                    .withStyle(style -> style.withColor(Color.RED.getRGB())),
                             null
                     );
                     continue;
@@ -200,13 +200,13 @@ public class TwitchEmotes implements ClientModInitializer {
                 if(scopeResult.successful())
                     ToastNotification.toast(
                             Component.translatable("toast.twitchemotes.reloadedproviderscope", type.getDisplayName(), scope.getDisplayName())
-                                    .withColor(Color.GREEN.getRGB()),
+                                    .withStyle(style -> style.withColor(Color.GREEN.getRGB())),
                             null
                     );
                 else
                     ToastNotification.toast(
                             Component.translatable("toast.twitchemotes.reloadproviderscopefailed", type.getDisplayName(), scope.getDisplayName())
-                                    .withColor(Color.RED.getRGB()),
+                                    .withStyle(style -> style.withColor(Color.RED.getRGB())),
                             null
                     );
             }
